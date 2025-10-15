@@ -1,0 +1,45 @@
+## Klinik bilgi 
+
+- Metin verisi görüntünün önüne geçebilir. 
+  - Triyaj algoritmasında klinik bilgide tümör şüphesi
+  - Primeri bilinmeyen tümör algoritmasında yaş, cinsiyet
+
+- Tedavi
+- Sağkalım
+
+::: {.notes}
+
+Klinik bilgi, görüntüden daha değerli olabilir ve modelin performansını dramatik şekilde artırabilir.
+
+**Tartışma soruları:**
+
+**Klinik Bilginin Rolü:**
+- Görüntü + klinik bilgi vs sadece görüntü: Performans farkı ne kadar?
+- Triyaj algoritmasında "tümör şüphesi" bilgisi etik mi? Bias yaratır mı?
+- Primeri bilinmeyen tümörde yaş/cinsiyet kullanımı: Yardımcı mı, kısıtlayıcı mı?
+
+**Multimodal Modeller:**
+- Görüntü ve metin verisi nasıl birleştirilmeli? Early fusion vs late fusion?
+- Klinik bilgi eksik olduğunda model çalışabilmeli mi?
+- Hangi klinik bilgiler en informatif: Yaş, cinsiyet, tümör boyutu, lokasyon?
+
+**Tedavi ve Sağkalım Tahmini:**
+- Tedavi bilgisi model girdi mi olmalı?
+- Sağkalım tahmini için hangi faktörler gerekli?
+- Retrospektif verilerden prospektif tahmin mümkün mü?
+
+**Veri Kalitesi:**
+- Klinik bilgi kayıp veri (missing data) sorunu: Imputation mi, exclude mi?
+- Farklı kurumlardan gelen veriler standardize edilebilir mi?
+- EMR (Electronic Medical Record) entegrasyonu nasıl yapılmalı?
+
+**Etik ve Pratik:**
+- Klinik bilgiye modelin erişimi hasta mahremiyetini etkiler mi?
+- Hekim klinik bilgi girmezse model sonuç vermemeli mi?
+- "Metin verisi görüntünün önüne geçebilir" → Bu kabul edilebilir mi?
+
+**Hekim-Mühendis Diyalogu:**
+- Hekim: "Hastanın yaşı 85, tedavi planını etkiler" → Mühendis: "Yaş kategorik mi sürekli mi girilmeli?"
+- Mühendis: "Klinik bilgi olmadan model çalışmıyor" → Hekim: "Her zaman klinik bilgi mevcut değil"
+
+:::

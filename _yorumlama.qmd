@@ -1,0 +1,21 @@
+# Değerlendirme ve Yorumlama
+
+Model bize ne kadar bilgi veriyor. 
+Model bize rutin pratiğimizde yol gösterici olabilir mi? 
+
+HPV ya da EBV varlığını tespit ettiğini idda eden model "surrogate" belirteç mi tespit ediyor? 
+
+
+QuPath & histai SPIDER Colorectal Model https://www.youtube.com/watch?v=8tLORQ7yUIQ
+
+histai SPIDER colorectal model deneme1 https://www.youtube.com/watch?v=2A-7oQeO9sQ 
+
+Confusion matrix vs Görsel
+
+
+::: {.notes}
+Sonuçların yorumlanmasında patologlara görsel bir arayüz sunulması önemlidir.
+Özgüllük, seçicilik, eğri altında kalan alan, F1 skoru gibi değerler modelin başarısını gösterse de sonuçların görüntüler üzerinde gösterilmesi karşılıklı anlaşma için önem taşımaktadır. 
+
+
+:::

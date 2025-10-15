@@ -1,0 +1,64 @@
+## Görüntü Verisi
+
+- Hazır veri setleri
+- Hazır taranmış görüntü
+- Arşivden eski vakalar
+    - Solma, çizilme, tozlanma
+
+### Dosya boyutu
+
+- 1-5 GB
+- Saklamak zor
+- Online kullanımı zor
+
+### Dosya türü
+
+- svs
+- dicom
+- tiff
+
+### Tarama Çözünürlüğü ve Boyutlar
+
+- 10x, 20x, 40x  
+- Triyaj, Tanı, Sağkalım
+
+### Doku tipi
+
+- Z-stack
+- Sitoloji
+- Frozen
+- Özel boyalar
+
+
+
+::: {.notes}
+Görüntü verisi yönetimi, computational pathology'nin en zor yönlerinden biridir. Dosya boyutları, format çeşitliliği ve preprocessing gereksinimleri dikkatli planlama gerektirir.
+
+**Tartışma soruları:**
+
+**Veri Seçimi:**
+- Tüm slide'ı mı işlemeliyiz, yoksa ROI seçmeli miyiz?
+- Eski arşiv vakaları kullanılmalı mı? Solmuş, çizilmiş görüntüler modeli nasıl etkiler?
+- Hazır veri setleri (TCGA, Camelyon) kendi verilerinize transfer edilebilir mi?
+
+**Teknik Kararlar:**
+- Frozen kesitler için ayrı model mi, yoksa tek model mi?
+- Tile boyutu seçiminde trade-off nedir? (Büyük tile = daha fazla context, daha yavaş)
+- Hangi magnification kullanılmalı: 10x, 20x, 40x? Görev bazında değişir mi?
+- Multi-magnification yaklaşımı (piramit) faydalı mı?
+
+**Altyapı:**
+- Cloud storage maliyeti vs lokal storage: Hangisi daha mantıklı?
+- 1-5 GB dosyalar için online inference mümkün mü?
+- Format dönüşümü (svs → tiff → dicom) gerekli mi?
+- Z-stack görüntüler single plane'e indirgenmeli mi?
+
+**Özel Durumlar:**
+- Sitoloji görüntüleri aynı modele dahil edilebilir mi?
+- İmmünohistokimya ve özel boyalar için ayrı pipeline mi?
+- Triyaj vs tanı vs sağkalım tahmini için farklı çözünürlükler kullanılmalı mı?
+
+**Hekim-Mühendis Köprüsü:**
+- Hekim: "Bu solmuş lam kabul edilir mi?" → Mühendis: "Augmentation vs filtreleme"
+- Mühendis: "Tüm slide'ı process etmek 10 saat sürüyor" → Hekim: "Diagnostik alanları işaretleyeyim"
+:::

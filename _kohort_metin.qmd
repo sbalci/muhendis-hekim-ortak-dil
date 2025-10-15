@@ -1,0 +1,65 @@
+## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
+
+
+:::::: columns
+
+::::: {.column width="48%"}
+
+:::: rows
+
+::: {.row}
+
+![](/media/rapor-ara-1.png){height="60%"}
+
+:::
+
+::: {.row}
+
+![](/media/rapor-ara-2.png){height="60%"}
+
+:::
+
+::::
+
+:::::
+
+
+::::: {.column width="4%"}
+:::::
+
+
+::::: {.column width="48%"}
+
+![](/media/extracting-information-poster-v2.png){height="60%"}
+
+:::::
+
+::::::
+
+
+
+::: footer
+:::
+
+
+
+
+
+:::::: {.notes}
+
+- Sinoptik var ama yapılandırılmış yok
+- Kısaltmalar
+- Zengin metin
+- Dil desteği, Tıbbi Türkçe
+- OCR, eski raporları tarama
+- preprocessing, etiketleme
+- Metin verisi bazen görüntüden daha bilgilendirici!
+- Metin verisi, görüntü verisi kadar önemlidir ve bazen görüntüden daha fazla bilgi içerir. NLP ile patoloji raporlarından otomatik veri çıkarımı, büyük veri setleri oluşturmak için kritiktir.
+- Manuel veri girişi mi yoksa NLP ile otomatik çıkarım mı daha güvenilir?
+- Eski raporları OCR ile dijitalleştirmeye değer mi?
+- Türkçe NLP modelleri için yeterli eğitim verisi var mı?
+- Yapılandırılmış rapor zorunluluğu getirilmeli mi?
+- Serbest metin mi, checklist mi daha faydalı?
+
+
+::::::

@@ -1,0 +1,30 @@
+## Amaç, Motivasyon, Etik
+
+
+::: panel-tabset
+### Amacımız nedir? {.smaller}
+- Merak 
+    - Dijital patoloji görüntüleri üzerine fikir sahibi olmak
+- Araştırma 
+    - Görüntü analizi, derin öğrenme, graph theory üzerinde çalışırken model olarak
+- Ürün 
+    - Karar destek sistemi geliştirmek
+    - Sağkalım / tedavi / genetik bilgiyi tahmin etmek
+
+### Motivasyonumuz nedir? {.smaller}
+- Makale / tez yazalım?
+- Patoloğun hayatını kolaylaştıracak mı? 
+
+### Etik sorunlar {.smallest}
+- Etik kurul onayı
+- Veri transferi ve verinin işleneceği ortam
+    - Kurum içi / Yurt içi / Bulut / Federe öğrenme
+- Araştırmacılar kim
+    - Yazar olarak görünen eksper patolog mu değerlendirdi? Teşekkür bölümünde adı geçen asistanı mı? *"Ground truth"* bilgisi nereden geliyor? 
+- Ghostlama / Etkin zaman kullanımı
+
+:::
+
+::: {.notes}
+
+:::

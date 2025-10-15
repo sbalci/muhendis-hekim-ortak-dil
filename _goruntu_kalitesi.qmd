@@ -1,0 +1,101 @@
+# Görüntü Kalitesi ve Ön İşleme
+
+## Kalite Kontrol Kriterleri
+
+::: incremental
+- Odak kalitesi (focus quality)
+- Doku miktarı ve yeterlilik
+- Artifact tespiti
+  - Kıvrımlar (tissue folds)
+  - Bulanıklık (blur)
+  - Kalem işaretleri
+  - Hava kabarcıkları
+  - Yanık alanlar
+:::
+
+## Renk Standardizasyonu
+
+::: panel-tabset
+### Problem
+
+- Aynı boya, farklı laboratuvarlarda farklı sonuçlar
+- Aynı laboratuvarda, farklı günlerde farklı sonuçlar
+- Tarayıcı kalibrasyonu
+- Işık kaynağı değişkenliği
+
+### Çözümler
+
+- Color normalization (Macenko, Reinhard, Vahadane)
+- Stain separation (H&E → Hematoxylin + Eosin)
+- StainGAN ve deep learning yaklaşımları
+- Reference slide kullanımı
+:::
+
+## Preprocessing Adımları
+
+::: incremental
+1. **Thumbnail inceleme**: Hızlı kalite kontrolü
+2. **Doku segmentasyonu**: Background vs tissue
+3. **Tile extraction**: Patch boyutu seçimi (256x256, 512x512, 1024x1024)
+4. **Quality filtering**: Bulanık veya artifact içeren tile'ların elenmesi
+5. **Color normalization**: Standardizasyon
+6. **Data augmentation**: Rotation, flip, color jitter
+:::
+
+## Mühendis-Hekim Tartışma Noktaları
+
+::: {.fragment}
+**Hekim sorusu**: "Neden modelim laboratuvar değişince çalışmıyor?"
+
+**Mühendis cevabı**: "Color normalization ve domain adaptation gerekiyor"
+:::
+
+::: {.fragment}
+**Mühendis sorusu**: "Hangi artifacts önemli, hangisi göz ardı edilebilir?"
+
+**Hekim cevabı**: "Küçük kıvrım ok, ama yanık alan ve kalın kesitte hücre morfolojisi değişir"
+:::
+
+## Araçlar ve Kaynaklar
+
+- **HistoQC**: Otomatik kalite kontrol
+- **QuPath**: Manual quality assessment
+- **StainTools**: Python color normalization library
+- **TorchStain**: PyTorch-based stain normalization
+
+::: {.notes}
+Görüntü kalitesi, model performansını doğrudan etkiler. Patoloji laboratuvarlarının standardizasyon çalışmaları, makine öğrenmesi modellerinin genelleştirilebilirliği için kritik öneme sahiptir.
+
+**Tartışma soruları:**
+- Kalite kontrolü otomatik mi manuel mi yapılmalı?
+- Threshold değerleri nasıl belirlenmeli?
+- Düşük kaliteli görüntüler veri setinden çıkarılmalı mı yoksa augmentation ile kullanılmalı mı?
+:::
+
+
+## Boya Varyasyonu Problemi
+
+::: panel-tabset
+### Laboratuvarlar Arası
+
+- Farklı boyama protokolleri
+- Farklı kimyasal tedarikçileri
+- Farklı pH değerleri
+- Farklı inkubasyon süreleri
+- Tarayıcı farklılıkları
+
+### Aynı Laboratuvar İçinde
+
+- Boya yaşlanması
+- Otostainer kalibrasyonu
+- Reagent lot değişimi
+- Kesit kalınlığı değişimi
+- Fikzasyon süresi farklılıkları
+:::
+
+
+
+::: {.notes}
+
+:::
+

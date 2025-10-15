@@ -1,0 +1,208 @@
+# Anonimlestirme ve Veri Güvenliği
+
+## PHI (Protected Health Information) Nedir?
+
+::: incremental
+- **Doğrudan tanımlayıcılar**: İsim, TC kimlik no, hasta numarası
+- **Tarihler**: Doğum tarihi, işlem tarihi, rapor tarihi
+- **Coğrafi bilgiler**: Adres, posta kodu
+- **İletişim**: Telefon, e-posta
+- **Biometrik**: Yüz görüntüsü, parmak izi
+- **Fotoğraflar**: Hasta fotoğrafları
+- **Diğer**: IP adresi, cihaz numarası
+:::
+
+## DICOM Metadata Temizleme
+
+::: panel-tabset
+### Risk Alanları
+
+```
+DICOM Tags:
+(0010,0010) Patient Name
+(0010,0020) Patient ID
+(0010,0030) Patient Birth Date
+(0008,0020) Study Date
+(0008,0080) Institution Name
+(0008,0090) Referring Physician
+```
+
+### Temizleme Stratejisi
+
+1. **Remove**: Silme
+2. **Replace**: Dummy değer
+3. **Hash**: Kriptografik hash
+4. **Shift**: Tarih kaydırma
+5. **Keep**: Yaş, cinsiyet (demografik analiz için)
+:::
+
+## WSI Dosyalarında Gizli Bilgiler
+
+::::: columns
+::: {.column width="50%"}
+### Metadata
+
+- Hasta adı (slide başlığında)
+- Hastane adı
+- Patoloji numarası
+- Tarama tarihi
+- Operatör bilgisi
+- Cihaz seri numarası
+:::
+
+::: {.column width="50%"}
+### Görüntü İçinde
+
+- Barcode/QR code (hasta ID)
+- Etiketler üzerinde yazılar
+- Kalem notları (patolog initialleri)
+- Frozen kesit notları
+- Makro fotoğraflar
+:::
+:::::
+
+## Barcode ve Etiket Maskeleme
+
+::: incremental
+1. **Otomatik tespit**: OCR, barcode reader
+2. **Region masking**: Siyah kutu ile kapatma
+3. **Inpainting**: Görüntü ile doldurma
+4. **Crop**: Etiket bölgesini kesme
+:::
+
+::: {.fragment}
+**Dikkat**: Maskeleme işlemi model performansını etkileyebilir!
+:::
+
+## Tarih Bilgilerinin Shift Edilmesi
+
+```python
+# Örnek: Tüm tarihleri -500 gün kaydır
+random_shift = random.randint(-730, -365)  # 1-2 yıl
+
+original_date = datetime(2023, 5, 15)
+anonymized_date = original_date + timedelta(days=random_shift)
+
+# 2023-05-15 → 2021-11-10
+```
+
+::: {.fragment}
+**Avantaj**: Tarih sıralama ve interval korunur
+
+**Dezavantaj**: Mevsimsel etkiler değişir
+:::
+
+## De-identification Workflow
+
+```mermaid
+graph LR
+A[Original Data] --> B{PHI Check}
+B --> C[Metadata Cleaning]
+B --> D[Image De-ID]
+C --> E[Hash/Pseudonymize]
+D --> F[Mask/Crop]
+E --> G[Anonymized Data]
+F --> G
+G --> H{QA Check}
+H -->|Pass| I[Research Database]
+H -->|Fail| A
+```
+
+## Re-identification Riskleri
+
+::: incremental
+- **Nadir hastalık**: Tek vaka olabilir
+- **Kombinasyon**: Yaş + cinsiyet + tanı + tarih
+- **Görüntü özellikleri**: Unique patterns
+- **Metadata artıkları**: Eksik temizlik
+- **Linking attacks**: Dış veri kaynaklarıyla eşleştirme
+:::
+
+::: {.fragment}
+**K-anonymity**: En az k hasta benzer özelliklere sahip olmalı
+:::
+
+## KVKK ve GDPR Uyumu
+
+::::: columns
+::: {.column width="50%"}
+### KVKK (Türkiye)
+
+- Açık rıza gerekli
+- Veri işleme sözleşmesi
+- Veri saklama süresi
+- İmha prosedürü
+- Veri sorumlusu bildirim
+:::
+
+::: {.column width="50%"}
+### GDPR (Avrupa)
+
+- Right to be forgotten
+- Data portability
+- Privacy by design
+- DPO (Data Protection Officer)
+- DPIA (Data Protection Impact Assessment)
+:::
+:::::
+
+## Etik Kurul Gereksinimleri
+
+::: incremental
+- **Retrospektif çalışma**: Genellikle bilgilendirilmiş onam muafiyeti
+- **Prospektif çalışma**: Hasta onamı gerekli
+- **Veri paylaşımı**: Ek onay gerekebilir
+- **Uluslararası transfer**: Özel izin
+- **Ticari kullanım**: Farklı prosedür
+:::
+
+## Araçlar ve Yazılımlar
+
+- **DICOM Anonymizer**: dcm4che, CTP
+- **QuPath**: Manual region removal
+- **Python libraries**: pydicom, anonymize-slide
+- **OpenSlide**: Metadata inspection
+- **NBIA (National Biomedical Imaging Archive)**: Deidentification tools
+
+## Hekim-Mühendis Sorumluluk Paylaşımı
+
+::: {.fragment}
+**Hekim sorumluluğu**:
+- Etik kurul başvurusu
+- Hasta rızası süreci
+- PHI tanımlama
+- Klinik veri anonimizasyonu
+:::
+
+::: {.fragment}
+**Mühendis sorumluluğu**:
+- Teknik anonimlestirme
+- Güvenli veri transferi
+- Access control
+- Audit logging
+:::
+
+## Federe Öğrenme (Federated Learning)
+
+::: incremental
+- Veri kurum dışına çıkmaz
+- Model parametreleri paylaşılır
+- Privacy-preserving
+- Yüksek kompleksite
+- Heterogeneous data challenge
+:::
+
+::: {.fragment}
+**Patolojide federe öğrenme**: Çoklu hastane, ortak model, veri güvenliği
+:::
+
+::: {.notes}
+Anonimlestirme, sadece teknik bir prosedür değil, yasal ve etik bir zorunluluktur. KVKK ve GDPR uyumu, hasta güvenliği ve araştırma etiği için kritiktir.
+
+**Tartışma soruları:**
+- Tam anonimlestirme mümkün mü? (Re-identification risk hiç sıfır olur mu?)
+- Federe öğrenme pratik mi, yoksa ideal bir senaryo mu?
+- Etik kurul süreçleri AI araştırmaları için yeterince hızlı mı?
+- Barcode maskeleme zorunlu olmalı mı?
+- Ticari şirketlerle veri paylaşımı etik mi?
+:::

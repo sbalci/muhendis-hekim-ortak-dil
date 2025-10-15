@@ -1,0 +1,120 @@
+# Dokümantasyon ve Tekrarlanabilirlik
+
+## Neden Dokümantasyon?
+
+::: incremental
+- Şeffaflık ve güvenilirlik
+- Regülatör gereklilikler (CE-IVD, FDA)
+- Bilimsel yayın standartları
+- Klinik kullanım güvenliği
+- Ekip içi ve ekipler arası iletişim
+:::
+
+## Model Card
+
+::: panel-tabset
+### Model Detayları
+
+- Model adı ve versiyonu
+- Geliştiren kurum/kişiler
+- Model tipi (CNN, ViT, etc.)
+- Eğitim tarihi
+- Amaçlanan kullanım
+
+### Performans Metrikleri
+
+- Accuracy, Precision, Recall, F1
+- AUC-ROC
+- Test set performansı
+- Subgroup performansı
+- Sınırlamalar
+
+### Eğitim Verisi
+
+- Veri kaynağı
+- Hasta sayısı, görüntü sayısı
+- Dahil etme/dışlama kriterleri
+- Demografik bilgiler
+- Label kaynağı (konsensus, tek patolog, etc.)
+:::
+
+## Dataset Documentation
+
+::::: columns
+::: {.column width="50%"}
+### Motivation
+
+- Neden bu veri seti toplandı?
+- Hangi görev için?
+- Kim fonladı?
+:::
+
+::: {.column width="50%"}
+### Composition
+
+- Ne tür veriler içeriyor?
+- Kaç örnek var?
+- Missing data var mı?
+- Confidential bilgiler?
+:::
+:::::
+
+## Reproducibility Checklist
+
+::: incremental
+1. **Kod versiyonlama**: Git, commit hash
+2. **Environment**: requirements.txt, conda env, Docker
+3. **Random seed**: Tüm random işlemler için sabit seed
+4. **Hyperparameter**: Tüm parametreleri kaydet
+5. **Data split**: Train/val/test split'i kaydet (hasta ID bazında)
+6. **Model checkpoint**: Best model, training logs
+7. **Preprocessing**: Tüm adımları dokümante et
+:::
+
+## Version Control Stratejisi
+
+```
+project/
+├── data/
+│   ├── v1.0/  # İlk veri seti
+│   ├── v1.1/  # Yeni vakalar eklendi
+│   └── metadata.json
+├── models/
+│   ├── exp001_resnet50/
+│   ├── exp002_vit/
+│   └── model_registry.json
+└── code/
+    └── git repository
+```
+
+## Hekim-Mühendis İşbirliği
+
+::: {.fragment}
+**Hekim beklentisi**: "Hangi vakalarda başarılı, hangi vakalarda başarısız?"
+
+**Mühendis yapması gereken**: Error analysis ve stratified performance reporting
+:::
+
+::: {.fragment}
+**Mühendis beklentisi**: "Ground truth label'ları tutarlı mı?"
+
+**Hekim yapması gereken**: Inter-observer agreement çalışması (Kappa skoru)
+:::
+
+## Araçlar
+
+- **Model Cards**: [model-cards.github.io](https://modelcards.withgoogle.com/about)
+- **Datasheets for Datasets**: Template ve örnekler
+- **MLflow**: Experiment tracking
+- **DVC**: Data version control
+- **Weights & Biases**: Model tracking ve visualization
+
+::: {.notes}
+Dokümantasyon, sadece akademik bir gereklilik değil, klinik uygulamada hasta güvenliği ve regülatör onay için kritik öneme sahiptir.
+
+**Tartışma soruları:**
+- Hangi bilgiler model card'da mutlaka yer almalı?
+- Veri seti versiyonlaması nasıl yapılmalı? (Hasta eklenince, label değişince)
+- Reproducibility için minimum gereklilikler neler?
+- Patoloji uzmanı konsensus süreci nasıl dokümante edilmeli?
+:::

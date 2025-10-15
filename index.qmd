@@ -1,0 +1,94 @@
+---
+title: "Mühendisler ve Hekimler Ortak Bir Dili Nasıl Kurar?"
+subtitle: "Patologdan Mühendislere"
+author:
+   - name: "Serdar Balcı"
+     affiliation: "Memorial Patoloji"
+date: last-modified # 2025-10-18
+footer: "[Mühendisler ve Hekimler Ortak Bir Dili Nasıl Kurar? Patologdan Mühendislere](https://www.serdarbalci.com/)"
+logo: "./media/Doc_Dr_Serdar_Balci_patoloji_uzmani.png"
+include-after-body: logo-hyperlink.html
+editor: source
+format: 
+  # pptx: default
+  revealjs:
+    scrollable: true
+    # smaller: true
+    theme: [default, slides.scss]
+    # transition: fade
+    slide-number: true
+    show-slide-number: speaker
+    # chalkboard: true
+    chalkboard:
+      buttons: false
+    # preview-links: false
+    # embed-resources: true
+    revealjs-plugins:
+      - fullscreen
+    include-after-body:
+      - text: |
+          <script type="text/javascript">
+          Reveal.addEventListener('ready', (event) => {
+            if (event.indexh === 0) {
+              document.querySelector("div.slide-menu-button").style.display = "none";
+            } else {
+              document.querySelector("div.slide-menu-button").style.display = "block";
+            }
+          });
+          Reveal.addEventListener('slidechanged', (event) => {
+            if (event.indexh === 0) {
+              document.querySelector("div.slide-menu-button").style.display = "none";
+            } else {
+              document.querySelector("div.slide-menu-button").style.display = "block";
+            }
+          });
+          </script>
+# keep-md: true
+execute:
+  # echo: false
+  warning: false
+  output: asis
+  freeze: false
+cache: true
+# footnotes-hover: true
+# controls: auto
+title-slide-attributes:
+    data-background-image: ./media/memorial-logo.gif
+    data-background-size: cover
+    data-background-opacity: "0.05"
+    data-background-video-loop: true
+---
+
+
+{{< include _is_akisi.qmd >}}
+
+{{< include _amac_etik.qmd >}}
+
+{{< include _temel_histopatoloji.qmd >}}
+
+{{< include _kohort_metin.qmd >}}
+
+{{< include _kohort_klinik.qmd >}}
+
+{{< include _kohort_goruntu.qmd >}}
+
+{{< include _goruntu_kalitesi.qmd >}}
+
+{{< include _anonimlestirme.qmd >}}
+
+{{< include _annotasyon.qmd >}}
+
+{{< include _arayuz.qmd >}}
+
+{{< include _yorumlama.qmd >}}
+
+{{< include _dokumantasyon.qmd >}}
+
+{{< include _tesekkur.qmd >}}
+
+
+::: {.notes}
+
+
+:::
+

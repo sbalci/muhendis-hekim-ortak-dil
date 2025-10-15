@@ -1,0 +1,62 @@
+# Annotasyon, İşaretleme, Etiketleme
+
+- SNOMED-CT kodları ile prospektif etiketleme
+
+[Using Sectra PACS Annotations in QuPath: A Comprehensive Guide](https://github.com/sbalci/sectra-qupath)
+
+<https://github.com/sbalci/sectra-qupath>
+
+
+::: {.notes}
+
+Annotation kalitesi ve stratejisi, modelin başarısını doğrudan belirler. Yetersiz veya hatalı annotation, en iyi algoritmayı bile başarısız kılar.
+
+**Tartışma soruları:**
+
+**Annotation Granülaritesi:**
+- Ne kadar detaylı etiketleme gerekiyor: Görüntü bazı, lezyon seviyesi, hücre seviyesi?
+- Pixel-level segmentation mi, bounding box mi, point annotation mı?
+- Hangi görev için hangi seviye yeterli?
+
+**Annotation Araçları:**
+- QuPath vs ASAP vs caMicroscope: Hangisi daha uygun?
+- Hangi format kullanılmalı: XML, GeoJSON, proprietar?
+- Sectra PACS'tan QuPath'e transfer mümkün mü? (Mevcut çözüm: https://github.com/sbalci/sectra-qupath)
+
+**SNOMED-CT ile Prospektif Etiketleme:**
+- SNOMED-CT kodları rutin raporlamada kullanılabilir mi?
+- Prospektif etiketleme vs retrospektif: Avantaj/dezavantaj?
+- Structured reporting bu süreci kolaylaştırır mı?
+
+**Annotation Kalitesi:**
+- Single annotator vs konsensus: Hangisi gerekli?
+- Inter-annotator agreement ne kadar olmalı? (Kappa > 0.7?)
+- Disagreement vakaları nasıl çözülmeli?
+
+**AI-Assisted Annotation:**
+- Pre-trained model ile ön annotation yapılmalı mı?
+- Active learning ile annotation yükü azaltılabilir mi?
+- Model suggestions patologları bias'lar mı?
+
+**Zaman ve Maliyet:**
+- Bir WSI'ı annotate etmek ne kadar sürer?
+- Patoloji uzmanı zamanı vs teknisyen zamanı: Kim yapmalı?
+- Annotation outsource edilebilir mi? (Crowdsourcing?)
+
+**Özel Durumlar:**
+- Fuzzy boundaries (belirsiz sınırlar) nasıl annotate edilmeli?
+- Heterojen tümörler: Her alan ayrı mı etiketlenmeli?
+- Rare cases için yeterli annotation mümkün mü?
+
+**Hekim-Mühendis İş Bölümü:**
+- Hekim rolü: Diagnostic bölgeleri işaretleme, quality control
+- Mühendis rolü: Tool hazırlama, format dönüşümü, preprocessing
+- Hekim: "Bu alan atipik, ama malign değil" → Mühendis: "Binary label yeterli mi?"
+- Mühendis: "1000 slide annotate edin" → Hekim: "İmkansız, AI yardımı lazım"
+
+**Pratik Çözümler:**
+- Minimum viable annotation: En az çaba, maksimum etki
+- Stratified sampling: Tüm vakaları değil, representatif olanları
+- Iterative annotation: İlk model → hata analizi → ek annotation
+
+:::
