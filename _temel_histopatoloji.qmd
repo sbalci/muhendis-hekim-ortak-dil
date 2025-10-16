@@ -4,46 +4,13 @@
 - Patoloji-mühendis ortak workshop'lar
 - Rapor alanları ve terminolojisi
 - Tanı kriterleri, derecelendirme
+- Gözlemciler arası uyum 
 - Sayısal skorlar ve ölçüm yöntemleri (eyeballing, hotspot)
 - Kategoriler ve cut-off belirleme
-- Doğal, nekroz, tümör, bağ doku, inflamasyon 
+- Doğal, nekroz, tümör, bağ doku, inflamasyon
 
-- **ESDIP Academy 2024**: https://www.esdipath.org/academy/
+- ESDIP Academy 2024 <https://www.esdipath.org/academy/>
 
-::::: {.notes}
+::: notes
 
-Mühendislerin patoloji temellerini anlaması ve hekimlerin görüntü analizi tekniklerini öğrenmesi, başarılı bir işbirliği için elzemdir.
-
-**Tartışma soruları:**
-
-**Eğitim ve Hazırlık:**
-- Mühendisler ne kadar patoloji eğitimi almalı? Laboratuvar ziyareti yeterli mi?
-- Patologlar ne kadar teknik detay bilmeli? Python kod yazması gerekir mi?
-- Ortak workshop'lar nasıl yapılandırılmalı?
-
-**Terminoloji ve İletişim:**
-- Rapor alanlarını mühendisler doğru yorumlayabiliyor mu?
-- "Grade 2" ne demek? Mühendis bunu nasıl sayısal değere çevirecek?
-- Kategoriler vs sürekli değişkenler: Cut-off'ları kim belirlemeli?
-
-**Ölçüm ve Değerlendirme:**
-- Eyeballing (göz kararı) vs dijital sayım: Hangisi gold standard?
-- Hotspot seçimi subjektif mi? Model bunu öğrenebilir mi?
-- Inter-observer varyabilite (patoloğlar arası farklılık) nasıl yönetilmeli?
-
-**Doku Anlayışı:**
-- Doğal doku, nekroz, tümör, stroma, inflamasyon: Model bunları ayırt edebilmeli mi?
-- Hücre sayısı neden aynı tanıda farklı? Bu varyabilite modeli etkiler mi?
-- Doku işleme (shrinkage, artifact) model için problem mi?
-
-**Ortak Dil Kurma:**
-- Patoloji dili (epitelyal, stromada yoğun lenfositik infiltrasyon) → Mühendis dili (cell density, spatial distribution)
-- Hekim: "Bu vaka atipik" → Mühendis: "Atipik nasıl ölçülür?"
-- Mühendis: "Model %87 accuracy verdi" → Hekim: "Hangi vakalarda başarısız?"
-
-**Pratik Öneriler:**
-- ESDIP Academy gibi eğitim programları zorunlu mu?
-- Her proje öncesi patoloji laboratuvar turu yapılmalı mı?
-- Ortak terminoloji sözlüğü oluşturulmalı mı?
-
-:::::
+:::

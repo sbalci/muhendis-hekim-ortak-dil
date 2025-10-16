@@ -1,5 +1,46 @@
 ## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
 
+![](/media/rapor-ornek-3a.jpg){height="60%"}
+
+## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
+
+::::: rows
+
+:::: {.row}
+
+![](/media/rapor-ornek-1a.jpg)
+
+::::
+
+:::: {.row}
+
+![](/media/rapor-ornek-2a.jpg)
+
+::::
+
+:::::
+
+## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
+
+::::: rows
+
+:::: {.row}
+
+![](/media/rapor-ornek-1b.jpg)
+
+::::
+
+:::: {.row}
+
+![](/media/rapor-ornek-2b.jpg)
+
+::::
+
+:::::
+
+
+## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
+
 
 :::::: columns
 
@@ -37,16 +78,11 @@
 ::::::
 
 
-
 ::: footer
 :::
 
 
-
-
-
-:::::: {.notes}
-
+::: notes
 - Sinoptik var ama yapılandırılmış yok
 - Kısaltmalar
 - Zengin metin
@@ -60,6 +96,4 @@
 - Türkçe NLP modelleri için yeterli eğitim verisi var mı?
 - Yapılandırılmış rapor zorunluluğu getirilmeli mi?
 - Serbest metin mi, checklist mi daha faydalı?
-
-
-::::::
+:::
