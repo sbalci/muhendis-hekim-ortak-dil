@@ -1,4 +1,8 @@
-## Görüntü Kalitesi - Preparat
+## Görüntü Kalitesi
+
+::: panel-tabset
+
+### Preparat
 
 - Artefakt
   - Kıvrımlar 
@@ -6,7 +10,7 @@
   - Kalem işaretleri
   - Hava kabarcıkları
 
-## Görüntü Kalitesi - Tarama
+### Tarama
 
 - Tarama kalitesi
   - Kamera, Işık
@@ -14,13 +18,16 @@
 - Tarama zamanı (hemen vs arşiv)
 
 
-## Görüntü Kalitesi Tespiti
+### Kalite Kontrol
 
 - Patolog
 - Yapay zeka
   - GrandQC
 
-## İdeal şartlarda bile olan Sorunlar
+:::
+
+
+## İdeal Şartlarda Bile Olan Sorunlar
 
 - Aynı boya, farklı laboratuvarlarda farklı sonuçlar
 - Aynı laboratuvarda, farklı günlerde farklı sonuçlar
@@ -37,9 +44,6 @@
 - Stain separation (H&E → Hematoxylin + Eosin)
 - StainGAN ve deep learning yaklaşımları
 - Reference slide kullanımı
-
-
-
 
 Preprocessing Adımları
 
@@ -99,5 +103,6 @@ Kolaylaştırıcı notları (görüntü kalitesi):
 - QC pipeline: HistoQC/QuPath ile otomatik rapor + %N manuel örnekleme; sonuçların sürümlemesi.
 - Renk varyasyonu azaltma: referans lam, kontrol serisi ve tarayıcı kalibrasyonu; normalizasyonun nerede uygulandığı (train/inference).
 - Artefakt politikası: tamamen dışlama vs modelle birlikte tolerans/robustluk; klinik kabul kriterleriyle hizalama.
+
 :::
 
