@@ -6,8 +6,13 @@
 
 - Tedavi
 - Sağkalım
+- Hasta Takibi 
 
-::: {.notes}
+
+
+
+
+::: notes
 
 Klinik bilgi, görüntüden daha değerli olabilir ve modelin performansını dramatik şekilde artırabilir.
 
@@ -42,4 +47,11 @@ Klinik bilgi, görüntüden daha değerli olabilir ve modelin performansını dr
 - Hekim: "Hastanın yaşı 85, tedavi planını etkiler" → Mühendis: "Yaş kategorik mi sürekli mi girilmeli?"
 - Mühendis: "Klinik bilgi olmadan model çalışmıyor" → Hekim: "Her zaman klinik bilgi mevcut değil"
 
+
+Kolaylaştırıcı notları (klinik bilgi):
+- Zorunlu alanlar: yaş, cinsiyet, lokasyon, evre; opsiyonel: tedavi, yanıt, takip süresi.
+- Missing policy: imputasyon vs eksiltme; prospektif form/şablon önerisi.
+- Fairness dilimleri: yaş/cinsiyet/merkez bazında raporlama zorunlu.
+- Triyaj etik etkisi: “tümör şüphesi” değişkeni ile bias riski; körleme seçenekleri.
+- Multimodal: early vs late fusion prototipleri ve eksik klinik bilgiyle çalışma stratejisi.
 :::
