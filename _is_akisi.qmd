@@ -12,7 +12,8 @@ if (!file.exists("./qrcodes/patolojide-bilisim.svg")) {
 ```
 
 ::::: columns
-::: {.column width="80%"}
+
+:::: {.column width="80%"}
 
 ```{mermaid}
 %%| fig-width: 10
@@ -83,26 +84,29 @@ SİTOLOJİ[Sitoloji] --> DOKUTAKIP[Doku Takip]
 SİTOLOJİ[Sitoloji] --> TESLIMATDP[Teslimat ya da Dijital Tarama]
 ```
 
-:::
+::::
 
-::: {.column width="20%"}
+:::: {.column width="20%"}
 
+::: {.fragment .fade-in}
 ![](media/patoloji-laboratuvarini-anlama-kilavuzu-1.jpg)
 
-![](qrcodes/patolojide-bilisim.svg)
 
+![](qrcodes/patolojide-bilisim.svg)
 :::
 
-:::::
+::::
+
+
+::::: 
+
+
 
 ::: footer
 :::
 
 
 ::: {.notes}
-
-
-
 
 
 %%| fig-width: 12      # Make it wider
