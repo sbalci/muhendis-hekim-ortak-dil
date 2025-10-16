@@ -12,7 +12,7 @@
 
 
 
-::: notes
+::: {.notes} 
 
 Klinik bilgi, görüntüden daha değerli olabilir ve modelin performansını dramatik şekilde artırabilir.
 

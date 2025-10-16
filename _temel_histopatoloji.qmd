@@ -11,6 +11,6 @@
 
 - ESDIP Academy 2024 <https://www.esdipath.org/academy/>
 
-::: notes
+::: {.notes} 
 
 :::

@@ -1,6 +1,10 @@
-# Dokümantasyon ve Tekrarlanabilirlik
+## Dokümantasyon ve Tekrarlanabilirlik
 
-::: notes
+
+
+
+
+::::: {.notes} 
 
 Neden Dokümantasyon?
 

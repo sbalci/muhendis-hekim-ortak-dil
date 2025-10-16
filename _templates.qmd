@@ -36,7 +36,7 @@ contents...
 
 Slide content
 
-::: notes
+::: {.notes} 
 Speaker notes go here.
 :::
 

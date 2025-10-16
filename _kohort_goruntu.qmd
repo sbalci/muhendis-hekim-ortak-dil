@@ -40,7 +40,7 @@
 :::
 
 
-::: notes
+::: {.notes} 
 Görüntü verisi yönetimi, computational pathology'nin en zor yönlerinden biridir. Dosya boyutları, format çeşitliliği ve preprocessing gereksinimleri dikkatli planlama gerektirir.
 
 **Tartışma soruları:**

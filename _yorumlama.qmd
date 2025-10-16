@@ -1,4 +1,4 @@
-# Değerlendirme ve Yorumlama
+## Değerlendirme ve Yorumlama
 
 Model bize ne kadar bilgi veriyor. 
 Model bize rutin pratiğimizde yol gösterici olabilir mi? 
@@ -12,7 +12,7 @@ histai SPIDER colorectal model deneme1 https://www.youtube.com/watch?v=2A-7oQeO9
 
 Confusion matrix vs Görsel
 
-::: notes
+::::: {.notes} 
 
 
 Model Neyi Öğreniyor? Surrogate Marker Riski
@@ -90,4 +90,5 @@ Kolaylaştırıcı notları (yorumlama):
 - Hata analizi: karışıklık bölgeleri ısı haritası; tipik yanlış pozitif/negatif vaka listesi.
 - OOD/abstain: dağılım‑dışı tespiti ve “no‑call/ikinci okuma” politikası.
 - Klinik raporlama: model kapsamı ve sorumluluk beyanı; sınırlar ve uyarılar.
-:::
+
+:::::

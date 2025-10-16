@@ -82,7 +82,7 @@
 :::
 
 
-::: notes
+::: {.notes} 
 - Sinoptik var ama yapılandırılmış yok
 - Kısaltmalar
 - Zengin metin

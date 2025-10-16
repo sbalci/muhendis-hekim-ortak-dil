@@ -29,6 +29,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f93a80ff6be575fa97ffde97b4032936.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -450,14 +516,687 @@ SİTOLOJİ[Sitoloji] --&gt; TESLIMATDP[Teslimat ya da Dijital Tarama]
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<!-- {{< include _kohort_goruntu.qmd >}} -->
-<!-- {{< include _goruntu_kalitesi.qmd >}} -->
-<!-- {{< include _anonimlestirme.qmd >}} -->
-<!-- {{< include _annotasyon.qmd >}} -->
-<!-- {{< include _arayuz.qmd >}} -->
-<!-- {{< include _yorumlama.qmd >}} -->
-<!-- {{< include _dokumantasyon.qmd >}} -->
-<!-- {{< include _tesekkur.qmd >}} -->
+</section>
+<section id="görüntü-verisi" class="slide level2">
+<h2>Görüntü Verisi</h2>
+<ul>
+<li>Hazır veri setleri</li>
+<li>Hazır taranmış görüntü</li>
+<li>Arşivden eski vakalar
+<ul>
+<li>Solma, çizilme, tozlanma</li>
+</ul></li>
+</ul>
+<div class="fragment fade-in">
+<h3 id="dosya-boyutu">Dosya boyutu</h3>
+<ul>
+<li>1-5 GB</li>
+<li>Saklamak / aktarmak zor</li>
+<li>Online kullanımı zor</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<h3 id="dosya-türü">Dosya türü</h3>
+<ul>
+<li>svs</li>
+<li>dicom</li>
+<li>tiff</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<h3 id="tarama-çözünürlüğü-ve-boyutlar">Tarama Çözünürlüğü ve Boyutlar</h3>
+<ul>
+<li>10x, 20x, 40x<br>
+</li>
+<li>Triyaj, Tanı, Sağkalım</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<h3 id="doku-tipi">Doku tipi</h3>
+<ul>
+<li>Z-stack</li>
+<li>Sitoloji</li>
+<li>Frozen</li>
+<li>Özel boyalar</li>
+</ul>
+</div>
+<aside class="notes">
+<p>Görüntü verisi yönetimi, computational pathology’nin en zor yönlerinden biridir. Dosya boyutları, format çeşitliliği ve preprocessing gereksinimleri dikkatli planlama gerektirir.</p>
+<p><strong>Tartışma soruları:</strong></p>
+<p><strong>Veri Seçimi:</strong> - Tüm slide’ı mı işlemeliyiz, yoksa ROI seçmeli miyiz? - Eski arşiv vakaları kullanılmalı mı? Solmuş, çizilmiş görüntüler modeli nasıl etkiler? - Hazır veri setleri (TCGA, Camelyon) kendi verilerinize transfer edilebilir mi?</p>
+<p><strong>Teknik Kararlar:</strong> - Frozen kesitler için ayrı model mi, yoksa tek model mi? - Tile boyutu seçiminde trade-off nedir? (Büyük tile = daha fazla context, daha yavaş) - Hangi magnification kullanılmalı: 10x, 20x, 40x? Görev bazında değişir mi? - Multi-magnification yaklaşımı (piramit) faydalı mı?</p>
+<p><strong>Altyapı:</strong> - Cloud storage maliyeti vs lokal storage: Hangisi daha mantıklı? - 1-5 GB dosyalar için online inference mümkün mü? - Format dönüşümü (svs → tiff → dicom) gerekli mi? - Z-stack görüntüler single plane’e indirgenmeli mi?</p>
+<p><strong>Özel Durumlar:</strong> - Sitoloji görüntüleri aynı modele dahil edilebilir mi? - İmmünohistokimya ve özel boyalar için ayrı pipeline mi? - Triyaj vs tanı vs sağkalım tahmini için farklı çözünürlükler kullanılmalı mı?</p>
+<p><strong>Hekim-Mühendis Köprüsü:</strong> - Hekim: “Bu solmuş lam kabul edilir mi?” → Mühendis: “Augmentation vs filtreleme” - Mühendis: “Tüm slide’ı process etmek 10 saat sürüyor” → Hekim: “Diagnostik alanları işaretleyeyim”</p>
+<p>Kolaylaştırıcı notları (görüntü verisi): - Veri bütçesi hedefi: hasta sayısı, slide/sınıf dengesi; dış veri (TCGA vb.) kullanım kararı. - Tiling parametreleri: boyut, stride, foreground eşiği; MIL (slide‑level) vs seg (pixel‑level) stratejisi. - Magnification planı: 10x/20x/40x görev‑bazlı; multi‑magnification piramit gereksinimi. - Eski arşiv: solma/çizilme etkisi ve filtreleme vs augmentation kararı. - Format standardı ve DICOM WSI geçiş planı; metadata eşleme.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="görüntü-kalitesi" class="slide level2">
+<h2>Görüntü Kalitesi</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Preparat</a></li><li><a href="#tabset-2-2">Tarama</a></li><li><a href="#tabset-2-3">Kalite Kontrol</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>Artefakt
+<ul>
+<li>Kıvrımlar</li>
+<li>Bulanıklık</li>
+<li>Kalem işaretleri</li>
+<li>Hava kabarcıkları</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li>Tarama kalitesi
+<ul>
+<li>Kamera, Işık</li>
+<li>Odak</li>
+</ul></li>
+<li>Tarama zamanı (hemen vs arşiv)</li>
+</ul>
+</div>
+<div id="tabset-2-3">
+<ul>
+<li>Patolog</li>
+<li>Yapay zeka
+<ul>
+<li>GrandQC</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="ideal-şartlarda-bile-olan-sorunlar" class="slide level2 scrollable">
+<h2>İdeal Şartlarda Bile Olan Sorunlar</h2>
+<ul>
+<li>Aynı boya, farklı laboratuvarlarda farklı sonuçlar</li>
+<li>Aynı laboratuvarda, farklı günlerde farklı sonuçlar</li>
+<li>Renk kalitesi makale</li>
+<li>Tarayıcı kalibrasyonu</li>
+<li>Işık kaynağı değişkenliği</li>
+</ul>
+<aside class="notes">
+<p>Çözümler</p>
+<ul>
+<li>Color normalization (Macenko, Reinhard, Vahadane)</li>
+<li>Stain separation (H&amp;E → Hematoxylin + Eosin)</li>
+<li>StainGAN ve deep learning yaklaşımları</li>
+<li>Reference slide kullanımı</li>
+</ul>
+<p>Preprocessing Adımları</p>
+<ol type="1">
+<li><strong>Thumbnail inceleme</strong>: Hızlı kalite kontrolü</li>
+<li><strong>Doku segmentasyonu</strong>: Background vs tissue</li>
+<li><strong>Tile extraction</strong>: Patch boyutu seçimi (256x256, 512x512, 1024x1024)</li>
+<li><strong>Quality filtering</strong>: Bulanık veya artifact içeren tile’ların elenmesi</li>
+<li><strong>Color normalization</strong>: Standardizasyon</li>
+<li><strong>Data augmentation</strong>: Rotation, flip, color jitter</li>
+</ol>
+<p>Mühendis-Hekim Tartışma Noktaları</p>
+<p><strong>Hekim sorusu</strong>: “Neden modelim laboratuvar değişince çalışmıyor?”</p>
+<p><strong>Mühendis cevabı</strong>: “Color normalization ve domain adaptation gerekiyor”</p>
+<p><strong>Mühendis sorusu</strong>: “Hangi artifacts önemli, hangisi göz ardı edilebilir?”</p>
+<p><strong>Hekim cevabı</strong>: “Küçük kıvrım ok, ama yanık alan ve kalın kesitte hücre morfolojisi değişir”</p>
+<p>Araçlar ve Kaynaklar</p>
+<ul>
+<li><strong>HistoQC</strong>: Otomatik kalite kontrol</li>
+<li><strong>QuPath</strong>: Manual quality assessment</li>
+<li><strong>StainTools</strong>: Python color normalization library</li>
+<li><strong>TorchStain</strong>: PyTorch-based stain normalization</li>
+</ul>
+<p>Görüntü kalitesi, model performansını doğrudan etkiler. Patoloji laboratuvarlarının standardizasyon çalışmaları, makine öğrenmesi modellerinin genelleştirilebilirliği için kritik öneme sahiptir.</p>
+<p><strong>Tartışma soruları:</strong> - Kalite kontrolü otomatik mi manuel mi yapılmalı? - Threshold değerleri nasıl belirlenmeli? - Düşük kaliteli görüntüler veri setinden çıkarılmalı mı yoksa augmentation ile kullanılmalı mı?</p>
+<p>Boya Varyasyonu Problemi</p>
+<p>Laboratuvarlar Arası</p>
+<ul>
+<li>Farklı boyama protokolleri</li>
+<li>Farklı kimyasal tedarikçileri</li>
+<li>Farklı pH değerleri</li>
+<li>Farklı inkubasyon süreleri</li>
+<li>Tarayıcı farklılıkları</li>
+</ul>
+<p>Aynı Laboratuvar İçinde</p>
+<ul>
+<li>Boya yaşlanması</li>
+<li>Otostainer kalibrasyonu</li>
+<li>Reagent lot değişimi</li>
+<li>Kesit kalınlığı değişimi</li>
+<li>Fikzasyon süresi farklılıkları</li>
+</ul>
+<p>Kolaylaştırıcı notları (görüntü kalitesi): - Kabul kriterleri: odak skoru &gt; X, doku yüzdesi &gt; Y%; blur/fold/ink eşiği ve raporlama. - QC pipeline: HistoQC/QuPath ile otomatik rapor + %N manuel örnekleme; sonuçların sürümlemesi. - Renk varyasyonu azaltma: referans lam, kontrol serisi ve tarayıcı kalibrasyonu; normalizasyonun nerede uygulandığı (train/inference). - Artefakt politikası: tamamen dışlama vs modelle birlikte tolerans/robustluk; klinik kabul kriterleriyle hizalama.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="veri-güvenliği" class="slide level2">
+<h2>Veri Güvenliği</h2>
+<ul>
+<li>Rutindeki en vakit alıcı basamak</li>
+<li>Psödo-anonimleştirme</li>
+<li>Anonimleştirmenin veriyi bozması</li>
+</ul>
+</section>
+<section id="anonimlestirme" class="slide level2">
+<h2>Anonimlestirme</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="pacstan-aktarırken-anonimleştirme">PACS’tan aktarırken anonimleştirme</h3>
+</div><div class="column" style="width:50%;">
+<h3 id="aktarım-sonrası-anonimleştirme">Aktarım sonrası anonimleştirme</h3>
+</div></div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="annotasyon-işaretleme-etiketleme" class="slide level2">
+<h2>Annotasyon, İşaretleme, Etiketleme</h2>
+<ul>
+<li>SNOMED-CT kodları ile prospektif etiketleme</li>
+</ul>
+<p><a href="https://github.com/sbalci/sectra-qupath">Using Sectra PACS Annotations in QuPath: A Comprehensive Guide</a></p>
+<p><a href="https://github.com/sbalci/sectra-qupath" class="uri">https://github.com/sbalci/sectra-qupath</a></p>
+<aside class="notes">
+<p>Annotation kalitesi ve stratejisi, modelin başarısını doğrudan belirler. Yetersiz veya hatalı annotation, en iyi algoritmayı bile başarısız kılar.</p>
+<p><strong>Tartışma soruları:</strong></p>
+<p><strong>Annotation Granülaritesi:</strong> - Ne kadar detaylı etiketleme gerekiyor: Görüntü bazı, lezyon seviyesi, hücre seviyesi? - Pixel-level segmentation mi, bounding box mi, point annotation mı? - Hangi görev için hangi seviye yeterli?</p>
+<p><strong>Annotation Araçları:</strong> - QuPath vs ASAP vs caMicroscope: Hangisi daha uygun? - Hangi format kullanılmalı: XML, GeoJSON, proprietar? - Sectra PACS’tan QuPath’e transfer mümkün mü? (Mevcut çözüm: https://github.com/sbalci/sectra-qupath)</p>
+<p><strong>SNOMED-CT ile Prospektif Etiketleme:</strong> - SNOMED-CT kodları rutin raporlamada kullanılabilir mi? - Prospektif etiketleme vs retrospektif: Avantaj/dezavantaj? - Structured reporting bu süreci kolaylaştırır mı?</p>
+<p><strong>Annotation Kalitesi:</strong> - Single annotator vs konsensus: Hangisi gerekli? - Inter-annotator agreement ne kadar olmalı? (Kappa &gt; 0.7?) - Disagreement vakaları nasıl çözülmeli?</p>
+<p><strong>AI-Assisted Annotation:</strong> - Pre-trained model ile ön annotation yapılmalı mı? - Active learning ile annotation yükü azaltılabilir mi? - Model suggestions patologları bias’lar mı?</p>
+<p><strong>Zaman ve Maliyet:</strong> - Bir WSI’ı annotate etmek ne kadar sürer? - Patoloji uzmanı zamanı vs teknisyen zamanı: Kim yapmalı? - Annotation outsource edilebilir mi? (Crowdsourcing?)</p>
+<p><strong>Özel Durumlar:</strong> - Fuzzy boundaries (belirsiz sınırlar) nasıl annotate edilmeli? - Heterojen tümörler: Her alan ayrı mı etiketlenmeli? - Rare cases için yeterli annotation mümkün mü?</p>
+<p><strong>Hekim-Mühendis İş Bölümü:</strong> - Hekim rolü: Diagnostic bölgeleri işaretleme, quality control - Mühendis rolü: Tool hazırlama, format dönüşümü, preprocessing - Hekim: “Bu alan atipik, ama malign değil” → Mühendis: “Binary label yeterli mi?” - Mühendis: “1000 slide annotate edin” → Hekim: “İmkansız, AI yardımı lazım”</p>
+<p><strong>Pratik Çözümler:</strong> - Minimum viable annotation: En az çaba, maksimum etki - Stratified sampling: Tüm vakaları değil, representatif olanları - Iterative annotation: İlk model → hata analizi → ek annotation</p>
+<p>Kolaylaştırıcı notları (annotasyon): - Etiket taksonomisi ve tanım kitabı: sınıf örnekleriyle; belirsiz alan örneklerini özellikle belirtin. - Protokol: vaka başına hedef süre ve hedef alan; kim etiketler (uzman/teknisyen) ve QC oranı. - Kalite: %5 çift etiketleme, hedef kappa; uyuşmazlık çözümü ve konsensus süreci. - Active learning döngüsü: seçim stratejisi (uncertainty/diversity), durdurma kriterleri. - Format: GeoJSON + sınıf haritası; PACS→QuPath dönüşümünde alan/koordinat kontrolleri.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="arayüz" class="slide level2 scrollable">
+<h2>Arayüz</h2>
+<aside class="notes">
+<p>Patoloğun İhtiyaçları</p>
+<ul>
+<li><strong>Hızlı görselleştirme</strong>: Saniyeler içinde yükleme</li>
+<li><strong>Kolay navigasyon</strong>: Pan, zoom, rotate</li>
+<li><strong>Annotation araçları</strong>: Çizim, işaretleme, etiketleme</li>
+<li><strong>Model sonuçları</strong>: Heatmap, segmentasyon, sınıflandırma</li>
+<li><strong>Karşılaştırma</strong>: Orijinal vs model sonucu</li>
+<li><strong>Raporlama</strong>: Sonuçları rapor export</li>
+</ul>
+<p>Viewer Tipleri</p>
+<p>Web-based Viewers</p>
+<p><strong>Avantajlar</strong>: - Platform bağımsız - Kolay deployment - Collaborative - Cloud integration</p>
+<p><strong>Örnekler</strong>: - caMicroscope - OMERO.web - Digital Slide Archive (DSA)</p>
+<p>Desktop Viewers</p>
+<p><strong>Avantajlar</strong>: - Daha hızlı - Offline çalışma - Daha fazla özellik - Local processing</p>
+<p><strong>Örnekler</strong>: - QuPath - ImageScope - ASAP</p>
+<p>Annotation Interface Tasarımı</p>
+<p>Temel Özellikler</p>
+<ul>
+<li>Freehand drawing</li>
+<li>Polygon/rectangle</li>
+<li>Point markers</li>
+<li>Brush tool</li>
+<li>Eraser</li>
+<li>Undo/redo</li>
+<li>Zoom to annotation</li>
+</ul>
+<p>İleri Özellikler</p>
+<ul>
+<li>Multi-class labeling</li>
+<li>Hierarchical categories</li>
+<li>Collaboration (multiple users)</li>
+<li>AI-assisted annotation</li>
+<li>Measurement tools</li>
+<li>Shortcuts (keyboard)</li>
+</ul>
+<p>AI Model Entegrasyonu</p>
+<pre><code>User Interface
+    ↓
+Slide Selection
+    ↓
+Model Inference (Backend)
+    ↓
+Result Visualization
+    ↓
+User Review &amp; Edit
+    ↓
+Final Report</code></pre>
+<p>Görselleştirme Tipleri</p>
+<p>Heatmap</p>
+<ul>
+<li>Probability overlay</li>
+<li>Renk skalası (0-1)</li>
+<li>Threshold ayarlama</li>
+<li>Opacity control</li>
+</ul>
+<p>Segmentation Overlay</p>
+<ul>
+<li>Farklı renkler için farklı sınıflar</li>
+<li>Contour çizimi</li>
+<li>Fill vs outline</li>
+<li>Object count</li>
+</ul>
+<p>Classification Results</p>
+<ul>
+<li>Tile-level predictions</li>
+<li>Confidence scores</li>
+<li>Confusion regions</li>
+<li>Borderline cases</li>
+</ul>
+<p>Hekim Feedback Mekanizması</p>
+<ol type="1">
+<li><strong>Model sonucu göster</strong></li>
+<li><strong>Hekim değerlendir</strong>: Doğru/Yanlış</li>
+<li><strong>Düzeltme yap</strong>: Annotation edit</li>
+<li><strong>Feedback kaydet</strong>: Database’e yaz</li>
+<li><strong>Model güncelleme</strong>: Active learning</li>
+</ol>
+<p><strong>İteratif geliştirme</strong>: Hekim feedback → Model iyileştirme → Tekrar değerlendirme</p>
+<p>Hekim Geri Bildirim Arayüzü (Mock-up)</p>
+<p><em>Görüntü üzerinde modelin bulduğu alanlar (örn: heatmap) gösterilir.</em></p>
+<p><strong>Model Sonucu Değerlendirme</strong></p>
+<p><strong>Vaka ID:</strong> 12345</p>
+<p><strong>Model Tahmini:</strong> Tümör Tespiti</p>
+<p><strong>Güven Skoru:</strong> %92</p>
+<p><strong>Bu sonuç doğru mu?</strong></p>
+<p>[✔️ Doğru] [❌ Yanlış]</p>
+<p><strong>Düzeltme/Yorum:</strong></p>
+<p>(Metin kutusu: Patolog, yanlış pozitif/negatif alanları veya yorumlarını buraya yazabilir)</p>
+<p>[Gönder]</p>
+<p><strong>Örnek Yorumlar:</strong> - “Belirtilen alan tümör değil, yoğun inflamasyon.” - “Model bir tümör odağını atlamış (koordinat: x,y).” - “Sonuç doğru, ancak derecelendirme hatalı.”</p>
+<p>Uyarı Yorgunluğu (Alert Fatigue) ve Çözümleri</p>
+<p>incremental - <strong>Problem:</strong> Model çok fazla yanlış pozitif sonuç ürettiğinde, patologlar zamanla bu uyarılara karşı duyarsızlaşabilir ve gerçek pozitifleri de gözden kaçırabilir. - <strong>Çözüm 1: Güven Eşiğini (Confidence Threshold) Ayarlama:</strong> Sadece yüksek güven skoruna sahip sonuçları göster. Düşük güvenli sonuçları “isteğe bağlı” olarak sun. - <strong>Çözüm 2: Akıllı Gruplama:</strong> Benzer yanlış pozitifleri gruplayarak tek bir uyarı olarak sun. - <strong>Çözüm 3: Kullanıcı Odaklı Tasarım:</strong> Arayüzde uyarıların ne kadar rahatsız edici olduğunu patoloğun ayarlamasına izin ver (örn: sesli uyarı, yanıp sönen çerçeve vb.). - <strong>Amaç:</strong> Patoloğun dikkatini sadece en önemli ve en olası bulgulara çekmek.</p>
+<p>Performance ve Usability</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Özellik</th>
+<th>Gereksinim</th>
+<th>Çözüm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Loading time</td>
+<td>&lt;5 sn</td>
+<td>Tile-based loading, caching</td>
+</tr>
+<tr class="even">
+<td>Pan/Zoom</td>
+<td>Smooth (60 FPS)</td>
+<td>GPU acceleration, WebGL</td>
+</tr>
+<tr class="odd">
+<td>Annotation</td>
+<td>Real-time</td>
+<td>Local processing</td>
+</tr>
+<tr class="even">
+<td>Model inference</td>
+<td>&lt;1 dk/slide</td>
+<td>GPU server, batch processing</td>
+</tr>
+<tr class="odd">
+<td>Export</td>
+<td>Multiple formats</td>
+<td>PDF, CSV, JSON, GeoJSON</td>
+</tr>
+</tbody>
+</table>
+<p>Örnek Arayüzler</p>
+<p>QuPath</p>
+<ul>
+<li>Open-source</li>
+<li>Desktop application</li>
+<li>Powerful scripting</li>
+<li>Machine learning integration</li>
+<li><strong>Demo</strong>: <a href="https://qupath.github.io/">QuPath.github.io</a></li>
+</ul>
+<p>histai SPIDER</p>
+<ul>
+<li>Web-based</li>
+<li>Ready-to-use models</li>
+<li>Visual interface</li>
+<li><strong>Demo video</strong>: <a href="https://www.youtube.com/watch?v=8tLORQ7yUIQ">YouTube</a></li>
+</ul>
+<p>caMicroscope</p>
+<ul>
+<li>Web-based viewer</li>
+<li>Annotation tools</li>
+<li>DICOM WSI support</li>
+<li><strong>Demo</strong>: <a href="https://camicroscope.org/">camicroscope.org</a></li>
+</ul>
+<p>Hekim-Mühendis UI/UX Tartışması</p>
+<p><strong>Hekim</strong>: “Çok karmaşık, ben sadece sonucu görmek istiyorum”</p>
+<p><strong>Mühendis</strong>: “Ama parametreleri ayarlamak isteyebilirsin”</p>
+<p><strong>Çözüm</strong>: <strong>Simple by default, advanced on demand</strong></p>
+<p><strong>Mühendis</strong>: “Web arayüzü daha pratik”</p>
+<p><strong>Hekim</strong>: “Ama hastane bilgisayarında browser restriction var”</p>
+<p><strong>Çözüm</strong>: <strong>Hybrid çözüm</strong> (Web + Desktop seçeneği)</p>
+<p>Accessibility ve Usability İlkeleri</p>
+<ul>
+<li><strong>Minimal öğrenme eğrisi</strong>: Sezgisel tasarım</li>
+<li><strong>Hızlı iş akışı</strong>: Keyboard shortcuts</li>
+<li><strong>Hata toleransı</strong>: Undo/redo, autosave</li>
+<li><strong>Clear feedback</strong>: Progress bar, notifications</li>
+<li><strong>Consistency</strong>: Standart UI patterns</li>
+<li><strong>Documentation</strong>: Tutorial, help menu</li>
+</ul>
+<p>Deployment Stratejileri</p>
+<p>On-premise</p>
+<ul>
+<li>Kurum içi server</li>
+<li>Veri güvenliği</li>
+<li>Performans kontrolü</li>
+<li>Yüksek maliyet (hardware)</li>
+</ul>
+<p>Cloud-based</p>
+<ul>
+<li>Scalable</li>
+<li>Düşük başlangıç maliyeti</li>
+<li>Remote access</li>
+<li>Veri transfer challenge</li>
+</ul>
+<p>Gelecek Trendler</p>
+<ul>
+<li><strong>AR/VR</strong>: Immersive pathology</li>
+<li><strong>Voice control</strong>: Hands-free annotation</li>
+<li><strong>Mobile app</strong>: Tablet support</li>
+<li><strong>Real-time collaboration</strong>: Multi-user sync</li>
+<li><strong>AI-assistant</strong>: Chatbot for queries</li>
+</ul>
+<p>Arayüz tasarımı, modelin klinik adaptasyonundaki en kritik faktörlerden biridir. En iyi model bile kötü bir arayüzle kullanılamaz hale gelebilir.</p>
+<p><strong>Tartışma soruları:</strong> - Patoloji uzmanları yeni arayüzlere ne kadar hızlı adapte olur? - AI sonuçları nasıl gösterilmeli: Heatmap mi, contour mu, text rapor mu? - Feedback mekanizması nasıl tasarlanmalı ki patologlar gerçekten kullansın? - Web vs Desktop: Hangi durumda hangisi daha uygun? - Mobil cihazlarda WSI görüntüleme pratik mi?</p>
+<p>Kolaylaştırıcı notları (arayüz/UX): - Görev seti: 5 temel görev (aç, zoom, işaretle, karşılaştır, export) için başarı ve süre ölçün. - Performans bütçeleri: açılış &lt;5 sn, pan/zoom 60 FPS; bütçe aşımı için uyarılar. - Belirsizlik/abstain gösterimi: güven skoru, “no‑call” rozetleri ve ikinci okuma akışı. - Feedback kaydı: Doğru/yanlış işaretleri, serbest metin yorum; veri şeması ve anonimleştirme. - “Varsayılan basit, isteğe bağlı ileri” modları: kullanıcı profiline göre ayar setleri.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="değerlendirme-ve-yorumlama" class="slide level2">
+<h2>Değerlendirme ve Yorumlama</h2>
+<p>Model bize ne kadar bilgi veriyor. Model bize rutin pratiğimizde yol gösterici olabilir mi?</p>
+<p>HPV ya da EBV varlığını tespit ettiğini idda eden model “surrogate” belirteç mi tespit ediyor?</p>
+<p>QuPath &amp; histai SPIDER Colorectal Model https://www.youtube.com/watch?v=8tLORQ7yUIQ</p>
+<p>histai SPIDER colorectal model deneme1 https://www.youtube.com/watch?v=2A-7oQeO9sQ</p>
+<p>Confusion matrix vs Görsel</p>
+<aside class="notes">
+<p>Model Neyi Öğreniyor? Surrogate Marker Riski</p>
+<p>Modelin, bizim istediğimiz biyolojik belirteci değil, onunla sıkça bir arada bulunan başka bir özelliği (“surrogate marker”) öğrenme riski vardır.</p>
+<p><strong>Hedef Belirteç: HPV</strong></p>
+<ul>
+<li><strong>Amaç:</strong> Model, HPV virüsünün neden olduğu hücresel değişiklikleri (koilositoz) tespit etmeli.</li>
+<li><strong>Gerçekte Öğrendiği:</strong> Model, HPV ile sıkça birlikte görülen yoğun lenfositik infiltrasyonu (inflamasyon) öğreniyor.</li>
+</ul>
+<p><strong>Sonuç ve Risk</strong></p>
+<ul>
+<li><strong>Görünürde Başarı:</strong> HPV pozitif vakaların çoğunda inflamasyon olduğu için model yüksek doğruluk gösterir.</li>
+<li><strong>Gizli Hata:</strong> İnflamasyonun olduğu ama HPV’nin olmadığı (örn: başka bir enfeksiyon) bir vakada model <strong>yanlış pozitif</strong> sonuç verir.</li>
+<li><strong>Çözüm:</strong> Modelin nereye baktığını gösteren Grad-CAM gibi açıklanabilirlik (XAI) teknikleri ile modelin gerçekten koilositlere mi yoksa inflamasyona mı odaklandığı kontrol edilmelidir.</li>
+</ul>
+<p>Metriklerin Ötesi: Hata Analizi</p>
+<p>Bir confusion matrix, modelin ne tür hatalar yaptığını özetler, ancak <em>neden</em> yaptığını göstermez.</p>
+<p><strong>Confusion Matrix</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Tahmin: Benign</th>
+<th style="text-align: center;">Tahmin: Malign</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Gerçek: Benign</strong></td>
+<td style="text-align: center;"><strong>TN: 90</strong></td>
+<td style="text-align: center;"><strong>FP: 5</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Gerçek: Malign</strong></td>
+<td style="text-align: center;"><strong>FN: 10</strong></td>
+<td style="text-align: center;"><strong>TP: 85</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>False Positives (FP):</strong> 5 benign vaka, malign sanıldı.</li>
+<li><strong>False Negatives (FN):</strong> 10 malign vaka, benign sanıldı.</li>
+</ul>
+<p><strong>Görsel Hata Analizi</strong></p>
+<p><strong>False Positive Örneği (Benign -&gt; Malign)</strong> <img data-src="https://via.placeholder.com/200x150/FFF0F5/000000?text=Reaktif+Atipi.png" alt="FP Örneği"> <em>Model, yoğun inflamasyon ve reaktif atipiyi malignite ile karıştırdı.</em></p>
+<p><strong>False Negative Örneği (Malign -&gt; Benign)</strong> <img data-src="https://via.placeholder.com/200x150/F0FFF0/000000?text=İyi+Diferansiye+Tümör.png" alt="FN Örneği"> <em>Model, normal dokuya çok benzeyen iyi diferansiye bir tümörü atladı.</em></p>
+<p>Modelin Gözünden: Açıklanabilirlik (XAI)</p>
+<p>Grad-CAM gibi Saliency Map teknikleri, modelin karar verirken görüntünün hangi bölgelerine “baktığını” veya odaklandığını gösteren ısı haritaları üretir.</p>
+<p><strong>Orijinal Görüntü ve Tahmin</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://via.placeholder.com/300x225/FFFFFF/000000?text=Orijinal+Görüntü.png"></p>
+<figcaption>Orijinal Görüntü</figcaption>
+</figure>
+</div>
+<p><strong>Model Tahmini:</strong> Adenokarsinom (%98)</p>
+<p><strong>Grad-CAM Isı Haritası</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://via.placeholder.com/300x225/FF0000/FFFFFF?text=Grad-CAM+Overlay.png"></p>
+<figcaption>Grad-CAM</figcaption>
+</figure>
+</div>
+<p><em>Isı haritası, modelin kararını verirken spesifik olarak tümör hücrelerinin bulunduğu alanlara odaklandığını gösteriyor. Bu, modelin doğru belirteçleri öğrendiğine dair güveni artırır.</em></p>
+<p>Sonuçların yorumlanmasında patologlara görsel bir arayüz sunulması önemlidir. Özgüllük, seçicilik, eğri altında kalan alan, F1 skoru gibi değerler modelin başarısını gösterse de sonuçların görüntüler üzerinde gösterilmesi karşılıklı anlaşma için önem taşımaktadır.</p>
+<p>Kolaylaştırıcı notları (yorumlama): - Kalibrasyon: kalibrasyon eğrisi ve Brier skoru; kalibrasyon sonrası eşik seçimi. - Eşik ve klinik fayda: Decision Curve Analysis ile net faydaya göre eşik belirleme. - Hata analizi: karışıklık bölgeleri ısı haritası; tipik yanlış pozitif/negatif vaka listesi. - OOD/abstain: dağılım‑dışı tespiti ve “no‑call/ikinci okuma” politikası. - Klinik raporlama: model kapsamı ve sorumluluk beyanı; sınırlar ve uyarılar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dokümantasyon-ve-tekrarlanabilirlik" class="slide level2 scrollable">
+<h2>Dokümantasyon ve Tekrarlanabilirlik</h2>
+<aside class="notes">
+<p>Neden Dokümantasyon?</p>
+<ul>
+<li>Şeffaflık ve güvenilirlik</li>
+<li>Regülatör gereklilikler (CE-IVD, FDA)</li>
+<li>Bilimsel yayın standartları</li>
+<li>Klinik kullanım güvenliği</li>
+<li>Ekip içi ve ekipler arası iletişim</li>
+</ul>
+<p>Model Card</p>
+<p>Model Detayları</p>
+<ul>
+<li>Model adı ve versiyonu</li>
+<li>Geliştiren kurum/kişiler</li>
+<li>Model tipi (CNN, ViT, etc.)</li>
+<li>Eğitim tarihi</li>
+<li>Amaçlanan kullanım</li>
+</ul>
+<p>Performans Metrikleri</p>
+<ul>
+<li>Accuracy, Precision, Recall, F1</li>
+<li>AUC-ROC</li>
+<li>Test set performansı</li>
+<li>Subgroup performansı</li>
+<li>Sınırlamalar</li>
+</ul>
+<p>Eğitim Verisi</p>
+<ul>
+<li>Veri kaynağı</li>
+<li>Hasta sayısı, görüntü sayısı</li>
+<li>Dahil etme/dışlama kriterleri</li>
+<li>Demografik bilgiler</li>
+<li>Label kaynağı (konsensus, tek patolog, etc.)</li>
+</ul>
+<p>Model Card: İyi vs.&nbsp;Kötü Örnek</p>
+<p><strong>Kötü Örnek (Yetersiz)</strong></p>
+<ul>
+<li><strong>Model:</strong> Test modeli</li>
+<li><strong>Performans:</strong> Yüksek</li>
+<li><strong>Veri:</strong> Hastane verisi</li>
+<li><strong>Kullanım:</strong> Araştırma</li>
+</ul>
+<p><strong>İyi Örnek (Detaylı)</strong></p>
+<ul>
+<li><strong>Model:</strong> Meme Kanseri Triyaj Modeli v1.2</li>
+<li><strong>Performans:</strong> Test setinde AUC: 0.98 (N=500), F1: 0.95. Düşük kaliteli görüntülerde performans düşer (AUC: 0.85).</li>
+<li><strong>Veri:</strong> Hastane A’dan 2018-2020 arası 2500 H&amp;E WSI. Sadece FFPE, dışlama: IHC, zayıf boyanma.</li>
+<li><strong>Kullanım:</strong> Yalnızca invaziv duktal karsinom şüphesi olan vakalarda triyaj amaçlıdır. Tanı için kullanılmaz.</li>
+</ul>
+<p>Dataset Documentation</p>
+<p>Motivation</p>
+<ul>
+<li>Neden bu veri seti toplandı?</li>
+<li>Hangi görev için?</li>
+<li>Kim fonladı?</li>
+</ul>
+<p>Composition</p>
+<ul>
+<li>Ne tür veriler içeriyor?</li>
+<li>Kaç örnek var?</li>
+<li>Missing data var mı?</li>
+<li>Confidential bilgiler?</li>
+</ul>
+<p>Reproducibility Checklist</p>
+<ol type="1">
+<li><p><strong>Kod versiyonlama</strong>: Git, commit hash</p></li>
+<li><p><strong>Environment</strong>: requirements.txt, conda env, Docker</p></li>
+<li><p><strong>Random seed</strong>: Tüm random işlemler için sabit seed</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> torch</span>
+<span id="cb2-2"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href=""></a><span class="im">import</span> random</span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a>seed <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb2-6"><a href=""></a>torch.manual_seed(seed)</span>
+<span id="cb2-7"><a href=""></a>np.random.seed(seed)</span>
+<span id="cb2-8"><a href=""></a>random.seed(seed)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p><strong>Hyperparameter</strong>: Tüm parametreleri kaydet</p></li>
+<li><p><strong>Data split</strong>: Train/val/test split’i kaydet (hasta ID bazında)</p></li>
+<li><p><strong>Model checkpoint</strong>: Best model, training logs</p></li>
+<li><p><strong>Preprocessing</strong>: Tüm adımları dokümante et</p></li>
+</ol>
+<p>Version Control Stratejisi</p>
+<pre><code>project/
+├── data/
+│   ├── v1.0/  # İlk veri seti
+│   ├── v1.1/  # Yeni vakalar eklendi
+│   └── metadata.json
+├── models/
+│   ├── exp001_resnet50/
+│   ├── exp002_vit/
+│   └── model_registry.json
+└── code/
+    └── git repository</code></pre>
+<p>Başarısız Deneyleri de Dokümante Edin!</p>
+<ul>
+<li><strong>Neden Önemli?</strong>
+<ul>
+<li>Aynı hataların tekrarlanmasını önler.</li>
+<li>Hangi yaklaşımların <em>neden</em> işe yaramadığını gösterir.</li>
+<li>Gelecekteki projeler için değerli bir bilgi birikimi sağlar.</li>
+</ul></li>
+<li><strong>Ne Dokümante Edilmeli?</strong>
+<ul>
+<li><strong>Hipotez:</strong> “ResNet50 yerine ViT kullanmak performansı artırır.”</li>
+<li><strong>Sonuç:</strong> “ViT, %5 daha düşük AUC ile sonuçlandı ve 2 kat daha fazla eğitim süresi gerektirdi.”</li>
+<li><strong>Olası Neden:</strong> “Veri setimiz (N=1000) ViT’nin etkili öğrenmesi için çok küçüktü.”</li>
+</ul></li>
+<li><strong>“Lab Defteri” Yaklaşımı:</strong> Her deneyin (başarılı veya başarısız) kaydedildiği bir günlük tutmak, projenin şeffaflığını ve tekrarlanabilirliğini artırır.</li>
+</ul>
+<p>Hekim-Mühendis İşbirliği</p>
+<p><strong>Hekim beklentisi</strong>: “Hangi vakalarda başarılı, hangi vakalarda başarısız?”</p>
+<p><strong>Mühendis yapması gereken</strong>: Error analysis ve stratified performance reporting</p>
+<p><strong>Mühendis beklentisi</strong>: “Ground truth label’ları tutarlı mı?”</p>
+<p><strong>Hekim yapması gereken</strong>: Inter-observer agreement çalışması (Kappa skoru)</p>
+<p>Araçlar</p>
+<ul>
+<li><strong>Model Cards</strong>: <a href="https://modelcards.withgoogle.com/about">model-cards.github.io</a></li>
+<li><strong>Datasheets for Datasets</strong>: Template ve örnekler</li>
+<li><strong>MLflow</strong>: Experiment tracking</li>
+<li><strong>DVC</strong>: Data version control</li>
+<li><strong>Weights &amp; Biases</strong>: Model tracking ve visualization</li>
+</ul>
+<p>Dokümantasyon, sadece akademik bir gereklilik değil, klinik uygulamada hasta güvenliği ve regülatör onay için kritik öneme sahiptir.</p>
+<p><strong>Tartışma soruları:</strong> - Hangi bilgiler model card’da mutlaka yer almalı? - Veri seti versiyonlaması nasıl yapılmalı? (Hasta eklenince, label değişince) - Reproducibility için minimum gereklilikler neler? - Patoloji uzmanı konsensus süreci nasıl dokümante edilmeli?</p>
+<p>Kolaylaştırıcı notları (dokümantasyon): - Model Card alanları için sorumlular ve teslim tarihi; boş alan bırakma politikası yok. - DVC/MLflow yapılandırması: deney adı, veri versiyonu, commit hash, parametre ve metrik kaydı. - Reprod paket içeriği: container/env, seed, veri soy ağacı, eğitim/validasyon scriptleri. - Changelog ve sürüm notları: değişiklik etkisi (risk/performans), geri dönüş planı. - Dataset datasheet doldurma: motivasyon, kompozisyon, etik; yayınlanabilir/kurum‑içi sürümler.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="teşekkürler" class="title-slide slide level1 center">
+<h1>Teşekkürler</h1>
+<div class="columns v-center-container">
+<div class="column" style="width:60%;">
+<p><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#606060;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> <a href="https://www.serdarbalci.com/">serdarbalci.com</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#606060;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> <a href="https://twitter.com/serdarbalci">@serdarbalci</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#606060;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> <a href="https://www.linkedin.com/in/serdar-balci-md-pathologist/">serdar-balci-md-pathologist</a></p>
+<p><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#606060;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <a href="https://github.com/sbalci/">sbalci</a></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./media/memorial-logo.gif"></p>
+</div></div>
+</section>
 <aside class="notes">
 <h3 id="genel-değerlendirme">Genel Değerlendirme</h3>
 <p>Bu sunum, bir computational pathology projesinin teknik ve pratik yönlerini mühendisler ve hekimler arasında bir köprü kurma hedefiyle kapsamlı bir şekilde ele alıyor. Her bir bölüm, projenin kritik bir aşamasını (veri toplama, anonimleştirme, annotasyon, modelleme, arayüz, dokümantasyon vb.) detaylandırarak önemli tartışma noktaları sunuyor. Sunumun gücü, sadece teknik detaylara değil, aynı zamanda hekim-mühendis işbirliğinin zorluklarına ve çözüm önerilerine odaklanmasından geliyor.</p>
@@ -580,7 +1319,6 @@ SİTOLOJİ[Sitoloji] --&gt; TESLIMATDP[Teslimat ya da Dijital Tarama]
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

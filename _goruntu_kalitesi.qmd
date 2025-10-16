@@ -36,7 +36,7 @@
 - Işık kaynağı değişkenliği
 
 
-::: notes
+::: {.notes} 
 
 Çözümler
 

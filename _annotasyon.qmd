@@ -7,7 +7,7 @@
 <https://github.com/sbalci/sectra-qupath>
 
 
-::: notes
+::::: {.notes} 
 
 Annotation kalitesi ve stratejisi, modelin başarısını doğrudan belirler. Yetersiz veya hatalı annotation, en iyi algoritmayı bile başarısız kılar.
 
@@ -66,4 +66,5 @@ Kolaylaştırıcı notları (annotasyon):
 - Kalite: %5 çift etiketleme, hedef kappa; uyuşmazlık çözümü ve konsensus süreci.
 - Active learning döngüsü: seçim stratejisi (uncertainty/diversity), durdurma kriterleri.
 - Format: GeoJSON + sınıf haritası; PACS→QuPath dönüşümünde alan/koordinat kontrolleri.
-:::
+
+:::::

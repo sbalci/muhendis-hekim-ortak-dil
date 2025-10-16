@@ -2,7 +2,7 @@
 
 
 
-::: notes
+::::: {.notes} 
 
 Patoloğun İhtiyaçları
 
@@ -273,4 +273,6 @@ Kolaylaştırıcı notları (arayüz/UX):
 - Belirsizlik/abstain gösterimi: güven skoru, “no‑call” rozetleri ve ikinci okuma akışı.
 - Feedback kaydı: Doğru/yanlış işaretleri, serbest metin yorum; veri şeması ve anonimleştirme.
 - “Varsayılan basit, isteğe bağlı ileri” modları: kullanıcı profiline göre ayar setleri.
-:::
+
+
+:::::

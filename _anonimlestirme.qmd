@@ -1,252 +1,31 @@
-## Anonimlestirme ve Veri Güvenliği
+## Veri Güvenliği
 
 - Rutindeki en vakit alıcı basamak
-- Psödoanonimleştirme
+- Psödo-anonimleştirme
 - Anonimleştirmenin veriyi bozması
 
 
+## Anonimlestirme
+
+
 ::::: columns
-::: {.column width="40%"}
+
+::: {.column width="50%"}
+
 ### PACS'tan aktarırken anonimleştirme
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="50%"}
+
 ### Aktarım sonrası anonimleştirme
 
 :::
+
 :::::
 
 
 
 
-::: notes
-
-PHI (Protected Health Information) Nedir?
-
-
-- **Doğrudan tanımlayıcılar**: İsim, TC kimlik no, hasta numarası
-- **Tarihler**: Doğum tarihi, işlem tarihi, rapor tarihi
-- **Coğrafi bilgiler**: Adres, posta kodu
-- **İletişim**: Telefon, e-posta
-- **Biometrik**: Yüz görüntüsü, parmak izi
-- **Fotoğraflar**: Hasta fotoğrafları
-- **Diğer**: IP adresi, cihaz numarası
-
-
-DICOM Metadata Temizleme
-
-Risk Alanları
-
-```
-DICOM Tags:
-(0010,0010) Patient Name
-(0010,0020) Patient ID
-(0010,0030) Patient Birth Date
-(0008,0020) Study Date
-(0008,0080) Institution Name
-(0008,0090) Referring Physician
-```
-
-Temizleme Stratejisi
-
-1. **Remove**: Silme
-2. **Replace**: Dummy değer
-3. **Hash**: Kriptografik hash
-4. **Shift**: Tarih kaydırma
-5. **Keep**: Yaş, cinsiyet (demografik analiz için)
-
-
-
-WSI Dosyalarında Gizli Bilgiler
-
-Metadata
-
-- Hasta adı (slide başlığında)
-- Hastane adı
-- Patoloji numarası
-- Tarama tarihi
-- Operatör bilgisi
-- Cihaz seri numarası
-
-Görüntü İçinde
-
-- Barcode/QR code (hasta ID)
-- Etiketler üzerinde yazılar
-- Kalem notları (patolog initialleri)
-- Frozen kesit notları
-- Makro fotoğraflar
-
-
-Barcode ve Etiket Maskeleme
-
-
-1. **Otomatik tespit**: OCR, barcode reader
-2. **Region masking**: Siyah kutu ile kapatma
-3. **Inpainting**: Görüntü ile doldurma
-4. **Crop**: Etiket bölgesini kesme
-
-**Dikkat**: Maskeleme işlemi model performansını etkileyebilir!
-
-
-Tarih Bilgilerinin Shift Edilmesi
-
-```python
-# Örnek: Tüm tarihleri -500 gün kaydır
-random_shift = random.randint(-730, -365)  # 1-2 yıl
-
-original_date = datetime(2023, 5, 15)
-anonymized_date = original_date + timedelta(days=random_shift)
-
-# 2023-05-15 → 2021-11-10
-```
-
-**Avantaj**: Tarih sıralama ve interval korunur
-
-**Dezavantaj**: Mevsimsel etkiler değişir
-
-## De-identification Workflow
-
-```mermaid
-graph LR
-A[Original Data] --> B{PHI Check}
-B --> C[Metadata Cleaning]
-B --> D[Image De-ID]
-C --> E[Hash/Pseudonymize]
-D --> F[Mask/Crop]
-E --> G[Anonymized Data]
-F --> G
-G --> H{QA Check}
-H -->|Pass| I[Research Database]
-H -->|Fail| A
-```
-
-
-Re-identification Riskleri
-
-
-- **Nadir hastalık**: Tek vaka olabilir
-- **Kombinasyon**: Yaş + cinsiyet + tanı + tarih
-- **Görüntü özellikleri**: Unique patterns
-- **Metadata artıkları**: Eksik temizlik
-- **Linking attacks**: Dış veri kaynaklarıyla eşleştirme
-
-
-**K-anonymity**: En az k hasta benzer özelliklere sahip olmalı
-
-
-Anonimleştirme-Fayda Dengesi
-
-
-
-- **Aşırı Anonimleştirme:** Klinik olarak önemli bilgilerin (örn: nadir bir morfolojik bulgu, kesin olmayan yaş) kaybına yol açabilir. Bu durum, modelin performansını düşürebilir.
-- **Yetersiz Anonimleştirme:** Hasta mahremiyetini riske atar ve yasal sorunlara yol açar.
-- **Denge:** Amaç, yeniden tanımlama riskini en aza indirirken, bilimsel araştırma için veri faydasını en üst düzeye çıkarmaktır. Bu, her proje için dikkatli bir risk/fayda analizi gerektirir.
-
-KVKK ve GDPR Uyumu
-
-
-KVKK (Türkiye)
-
-- Açık rıza gerekli
-- Veri işleme sözleşmesi
-- Veri saklama süresi
-- İmha prosedürü
-- Veri sorumlusu bildirim
-
-GDPR (Avrupa)
-
-- Right to be forgotten
-- Data portability
-- Privacy by design
-- DPO (Data Protection Officer)
-- DPIA (Data Protection Impact Assessment)
-
-Etik Kurul Gereksinimleri
-
-
-
-- **Retrospektif çalışma**: Genellikle bilgilendirilmiş onam muafiyeti
-- **Prospektif çalışma**: Hasta onamı gerekli
-- **Veri paylaşımı**: Ek onay gerekebilir
-- **Uluslararası transfer**: Özel izin
-- **Ticari kullanım**: Farklı prosedür
-
-Araçlar ve Yazılımlar
-
-- **DICOM Anonymizer**: dcm4che, CTP
-- **QuPath**: Manual region removal
-- **Python libraries**: pydicom, anonymize-slide
-- **OpenSlide**: Metadata inspection
-- **NBIA (National Biomedical Imaging Archive)**: Deidentification tools
- - **NBIA (National Biomedical Imaging Archive)**: Deidentification tools
-
-
-Kolaylaştırıcı notları (anonimleştirme):
-- DPIA (Etki Analizi) kontrol listesi ve sorumlular; veri akış diyagramını onaylatın.
-- DICOM/WSI tag politikası: keep/remove/hash/shift tablolarını kesinleştirin ve test edin.
-- Barcode/etiket maskeleme başarı metriği (precision/recall) ve manuel gözden geçirme oranı.
-- Re‑identification risk skoru ve hedef k‑anonimlik; nadir vaka yönetimi.
-- Sözleşmeler: DTA/BAA, KVKK ekleri; erişim yetkilendirme (RBAC) ve denetim izi.
-
-
-Hekim-Mühendis Sorumluluk Paylaşımı
-
-
-**Hekim sorumluluğu**:
-- Etik kurul başvurusu
-- Hasta rızası süreci
-- PHI tanımlama
-- Klinik veri anonimizasyonu
-
-**Mühendis sorumluluğu**:
-- Teknik anonimlestirme
-- Güvenli veri transferi
-- Access control
-- Audit logging
-
-Federe Öğrenme vs Merkezi Öğrenme
-
-
-
-**Merkezi Yaklaşım**
-
-```mermaid
-graph TD
-    A[Hastane A] --> C{Merkezi Sunucu};
-    B[Hastane B] --> C;
-    C -- Model Eğitimi --> C;
-    C -- Global Model --> A;
-    C -- Global Model --> B;
-    subgraph Veri Toplama
-        A
-        B
-    end
-```
-*Veri, tek bir sunucuda toplanır.*
-
-
-**Federe Yaklaşım**
-
-```mermaid
-graph TD
-    subgraph Hastane A
-        A[Veri A] -- Lokal Eğitim --> B(Model A);
-    end
-    subgraph Hastane B
-        D[Veri B] -- Lokal Eğitim --> E(Model B);
-    end
-    B -- Model Güncellemeleri --> C{Merkezi Sunucu};
-    E -- Model Güncellemeleri --> C;
-    C -- Global Model --> B;
-    C -- Global Model --> E;
-```
-*Veri yerinde kalır, sadece model güncellemeleri paylaşılır.*
-
-Federe Öğrenmenin Avantaj ve Dezavantajları
-
-
-- **Avantajlar:** Veri kurum dışına çıkmaz (mahremiyet), heterojen veri üzerinde daha iyi genelleme potansiyeli.
-- **Dezavantajlar:** Yüksek teknik karmaşıklık, iletişim maliyeti, "statistical heterogeneity" sorunu (hastaneler arası veri dağılımının farklı olması).
-
+::: {.notes} 
 :::
