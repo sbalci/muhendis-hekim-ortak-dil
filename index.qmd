@@ -43,6 +43,7 @@ format:
             }
           });
           </script>
+
 # keep-md: true
 execute:
   # echo: false
@@ -62,33 +63,142 @@ title-slide-attributes:
 
 {{< include _is_akisi.qmd >}}
 
+
 {{< include _amac_etik.qmd >}}
+
 
 {{< include _temel_histopatoloji.qmd >}}
 
+
 {{< include _kohort_metin.qmd >}}
+
 
 {{< include _kohort_klinik.qmd >}}
 
+
 {{< include _kohort_goruntu.qmd >}}
+
 
 {{< include _goruntu_kalitesi.qmd >}}
 
+
 {{< include _anonimlestirme.qmd >}}
+
 
 {{< include _annotasyon.qmd >}}
 
+
 {{< include _arayuz.qmd >}}
+
 
 {{< include _yorumlama.qmd >}}
 
+
 {{< include _dokumantasyon.qmd >}}
+
 
 {{< include _tesekkur.qmd >}}
 
 
 ::: {.notes}
 
+### Genel Değerlendirme
+
+Bu sunum, bir computational pathology projesinin teknik ve pratik yönlerini mühendisler ve hekimler arasında bir köprü kurma hedefiyle kapsamlı bir şekilde ele alıyor. Her bir bölüm, projenin kritik bir aşamasını (veri toplama, anonimleştirme, annotasyon, modelleme, arayüz, dokümantasyon vb.) detaylandırarak önemli tartışma noktaları sunuyor. Sunumun gücü, sadece teknik detaylara değil, aynı zamanda hekim-mühendis işbirliğinin zorluklarına ve çözüm önerilerine odaklanmasından geliyor.
+
+### Ek Tartışma Konuları ve Stratejik Öneriler
+
+Sunumun mevcut yapısını daha da zenginleştirmek ve tartışmayı stratejik bir seviyeye taşımak için aşağıdaki konuların eklenmesi faydalı olabilir:
+
+#### 1. Proje Stratejisi ve Yönetimi
+- **Minimum Viable Product (MVP) Belirleme:** İlk hedef ne olmalı? Tümör tespiti mi, derecelendirme mi, yoksa sadece triyaj mı? Projenin başlangıcında beklentileri yönetmek ve ulaşılabilir hedefler koymak kritiktir.
+- **Proje Fazları:** Araştırma prototipinden klinik kullanıma geçiş nasıl planlanmalı? (Faz 1: Keşif, Faz 2: Prototip, Faz 3: Validasyon, Faz 4: Klinik Entegrasyon).
+- **Kaynak Planlaması:** Proje için ne kadar zaman, insan gücü (patolog, mühendis) ve hesaplama kaynağı (GPU) gerekecek?
+
+#### 2. Model Yaşam Döngüsü ve MLOps (Machine Learning Operations)
+- **Sürekli İzleme (Monitoring):** Klinik kullanıma geçen bir modelin performansı zamanla nasıl izlenir? Veri kayması (data drift) veya konsept kayması (concept drift) nasıl tespit edilir? (Örn: Yeni bir tarayıcı alınması, boya markasının değişmesi).
+- **Yeniden Eğitim (Retraining):** Model ne sıklıkla ve hangi verilerle yeniden eğitilmeli? Yeni gelen vakalar ve hekim düzeltmeleri bu sürece nasıl dahil edilir?
+- **Model Versiyonlama:** Farklı model versiyonları nasıl yönetilir ve hangi versiyonun hangi vakada kullanıldığı nasıl takip edilir?
+
+#### 3. Klinik Entegrasyon ve Regülasyon
+- **Laboratuvar Bilgi Sistemi (LBS) Entegrasyonu:** Geliştirilen arayüz, mevcut patoloji iş akışına ve LBS'ye nasıl entegre edilecek?
+- **Regülasyon Süreçleri (CE-IVD/FDA):** Bir modelin "karar destek sistemi" olarak klinik onayı alması için gereken adımlar nelerdir? Bu süreç ne kadar sürer ve ne gibi validasyon çalışmaları gerektirir?
+- **Değişim Yönetimi:** Patologların yeni teknolojiye adaptasyonu nasıl sağlanır? Eğitim, workshop ve geri bildirim kanalları nasıl oluşturulur?
+
+#### 4. İnsan-Yapay Zeka İşbirliği (Human-in-the-Loop)
+- **Patoloğun Değişen Rolü:** AI, patoloğun yerini mi alacak, yoksa onu daha verimli hale getiren bir asistan mı olacak? AI sonrası patoloğun odaklanması gereken yeni alanlar neler olabilir? (Örn: Zor vakalar, kalite kontrol, yeni biyobelirteç keşfi).
+- **Güven ve Şeffaflık:** Patologların modele güvenmesi için ne gerekir? "Black box" modeller yerine açıklanabilir yapay zeka (XAI) yöntemleri ne kadar önemlidir?
+
+#### 5. Nadir Durumlar ve Dengesiz Veri Setleri
+- **Nadir Hastalıklar:** Çok az görülen tümör tipleri veya morfolojik paternler için model nasıl eğitilir? (Örn: Few-shot learning, transfer learning).
+- **Dengesiz Sınıflar:** Bir sınıfa ait örnek sayısı çok az olduğunda (örn: %1 pozitif, %99 negatif) modelin yanlılığını (bias) önlemek için hangi stratejiler izlenmeli? (Örn: Over-sampling, under-sampling, focal loss).
+
+#### 6. Gelecek Vizyonu: Multi-Modal Patoloji
+- **Genomik ve Radyolojik Veri Entegrasyonu:** Patoloji görüntülerinin yanı sıra genomik veriler (örn: NGS), radyoloji görüntüleri (örn: MR, CT) ve klinik verilerle birleştirilerek nasıl daha bütüncül modeller oluşturulabilir?
+- **Tahmin Modellerinin Ötesi:** Sadece tanı koymak yerine, tedaviye yanıtı, sağkalımı veya genetik mutasyonları doğrudan görüntüden tahmin eden modellerin potansiyeli nedir?
+
+Bu ek başlıklar, sunumun sonunda genel bir tartışma oturumu için zemin hazırlayabilir ve projenin sadece teknik bir çaba değil, aynı zamanda stratejik, organizasyonel ve felsefi bir dönüşüm olduğunu vurgulayabilir.
+
+#### 7. Ölçüm ve Klinik Fayda
+- Klinik fayda metrikleri: PPV/NPV, LR+/LR−, kalibrasyon (kalibrasyon eğrisi, Brier skoru)
+- Karar eğrileri ve net fayda (Decision Curve Analysis) ile eşik seçimi
+- İş yükü etkisi: okuma süresi, triayj isabeti, geri çağırma oranı, ek boyama/ek kesit ihtiyacı
+- Etki çalışmaları: time-to-diagnosis, tekrar başvuru/ek işlem azalması, klinik karar değişimi
+- Güven aralıkları ve örneklem büyüklüğü planı; alt-grup raporlama standardı
+
+#### 8. Dış Doğrulama ve Genellenebilirlik
+- Çok merkezli/çok tarayıcı/çok boyama ile dış test seti ve domain ayrıştırma
+- Confounder kontrollü değerlendirme: tarayıcı, stain, laboratuvar, yıl etkisi
+- OOD (distribution dışı) örnek tespiti ve “abstain”/reddetme stratejileri
+- Stres testleri: bulanıklık, renk kayması, tile düşmesi, kompresyon artefaktları
+- Veri sızıntısı kontrolleri ve hasta-bazlı split doğrulaması
+
+#### 9. Hata Analizi ve Risk Yönetimi
+- Hata taksonomisi: kritik/majör/minör; klinik risk matrisi (FMEA)
+- Eşikleme klinik amaca göre (screening vs tanı); belirsizlik tahmini ve güven skoru
+- Fail-safe UI: belirsiz vakada uyarı, ikinci okuma, “no-call” politikası
+- Rollback/kill-switch ve olay yönetimi (incident response) planı
+
+#### 10. Yönetişim ve Uyum
+- Model değişiklik kontrolü (change control) ve versiyon politikası
+- Denetim izi: kim-ne zaman-hangi model-hangi veride; immutability
+- Standartlar ve düzenlemeler: ISO 13485, IEC 62304, ISO 14971, MDR/IVDR, CAP/CLIA
+- Model Risk Yönetimi (MRM) ve onay kurulu (governance board)
+
+#### 11. Veri Yönetişimi ve Güvenlik
+- DTA/BAA sözleşmeleri; erişim yetkileri (RBAC), şifreleme (at-rest/in-transit)
+- Log/telemetride PHI sızıntısı kontrolleri ve maskeleme
+- Veri yaşam döngüsü: saklama, arşivleme, anonimleştirme, imha (retention policy)
+
+#### 12. Dağıtım ve İşletme
+- Shadow mode → sınırlı pilot → geniş yayılım; başarı kriterleri
+- Canary/A-B deneyleri ve kalite kapıları; güvenli geri dönüş
+- SLO/SLA: latency, throughput, uptime; kapasite planlama (GPU/IO)
+- Maliyet (TCO) ve bulut vs on-prem karşılaştırması
+
+#### 13. UI/UX Değerlendirmesi
+- Formatif/summatif kullanılabilirlik çalışmaları; görev-tabanlı test senaryoları
+- Bilişsel yük yönetimi: “varsayılan basit, isteğe bağlı ileri” yaklaşımı
+- Klinik geri bildirim döngüsü ve telemetri; etik sınırlar ve anonimleştirme
+
+#### 14. Adil ve Etik Kullanım
+- Adalet/fairness metrikleri: yaş/cinsiyet/merkez alt gruplarında performans
+- Bilgilendirilmiş onam ve görünür uyarılar; karar destek kapsamı beyanı
+- Klinik sorumluluk ve RACI; yanlış pozitif/negatiflerin yönetimi
+
+#### 15. Deney Tasarımı ve Bilimsel Standartlar
+- Baseline ve ablation zorunluluğu; karşılaştırılabilir protokoller
+- Ön-kayıt (preregistration), hipotez ve analiz planı; p-hacking önlemleri
+- Tekrarlanabilirlik paketi: kod, ortam (container), seed, veri soy ağacı
+
+#### 16. İnsan Kaynağı ve RACI
+- RACI tablosu: hekim, mühendis, BT, hukuk/veri koruma, kalite
+- Eğitim ve yetkinlik planı; “super-user”lar ve şampiyon klinisyenler
+
+#### 17. Canlı Tartışma ve Demo Fikirleri
+- Canlı heatmap/threshold oynama ile karar eşiği etkisi
+- Hata analizi vaka paneli: birlikte okuma ve neden-sonuç çıkarımı
+- Anket/polling: “Model nerede durmalı? Triyaj mı, tanı mı?”
 
 :::
 

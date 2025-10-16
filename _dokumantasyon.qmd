@@ -1,19 +1,20 @@
 # Dokümantasyon ve Tekrarlanabilirlik
 
-## Neden Dokümantasyon?
+::: notes
 
-::: incremental
+Neden Dokümantasyon?
+
+
 - Şeffaflık ve güvenilirlik
 - Regülatör gereklilikler (CE-IVD, FDA)
 - Bilimsel yayın standartları
 - Klinik kullanım güvenliği
 - Ekip içi ve ekipler arası iletişim
-:::
 
-## Model Card
+Model Card
 
-::: panel-tabset
-### Model Detayları
+
+Model Detayları
 
 - Model adı ve versiyonu
 - Geliştiren kurum/kişiler
@@ -21,7 +22,8 @@
 - Eğitim tarihi
 - Amaçlanan kullanım
 
-### Performans Metrikleri
+
+Performans Metrikleri
 
 - Accuracy, Precision, Recall, F1
 - AUC-ROC
@@ -29,49 +31,71 @@
 - Subgroup performansı
 - Sınırlamalar
 
-### Eğitim Verisi
+
+Eğitim Verisi
 
 - Veri kaynağı
 - Hasta sayısı, görüntü sayısı
 - Dahil etme/dışlama kriterleri
 - Demografik bilgiler
 - Label kaynağı (konsensus, tek patolog, etc.)
-:::
 
-## Dataset Documentation
+Model Card: İyi vs. Kötü Örnek
 
-::::: columns
-::: {.column width="50%"}
-### Motivation
+
+**Kötü Örnek (Yetersiz)**
+
+- **Model:** Test modeli
+- **Performans:** Yüksek
+- **Veri:** Hastane verisi
+- **Kullanım:** Araştırma
+
+**İyi Örnek (Detaylı)**
+
+- **Model:** Meme Kanseri Triyaj Modeli v1.2
+- **Performans:** Test setinde AUC: 0.98 (N=500), F1: 0.95. Düşük kaliteli görüntülerde performans düşer (AUC: 0.85).
+- **Veri:** Hastane A'dan 2018-2020 arası 2500 H&E WSI. Sadece FFPE, dışlama: IHC, zayıf boyanma.
+- **Kullanım:** Yalnızca invaziv duktal karsinom şüphesi olan vakalarda triyaj amaçlıdır. Tanı için kullanılmaz.
+
+
+Dataset Documentation
+
+
+Motivation
 
 - Neden bu veri seti toplandı?
 - Hangi görev için?
 - Kim fonladı?
-:::
 
-::: {.column width="50%"}
-### Composition
+Composition
 
 - Ne tür veriler içeriyor?
 - Kaç örnek var?
 - Missing data var mı?
 - Confidential bilgiler?
-:::
-:::::
 
-## Reproducibility Checklist
+Reproducibility Checklist
 
-::: incremental
+
 1. **Kod versiyonlama**: Git, commit hash
 2. **Environment**: requirements.txt, conda env, Docker
 3. **Random seed**: Tüm random işlemler için sabit seed
+   ```python
+   import torch
+   import numpy as np
+   import random
+   
+   seed = 42
+   torch.manual_seed(seed)
+   np.random.seed(seed)
+   random.seed(seed)
+   ```
 4. **Hyperparameter**: Tüm parametreleri kaydet
 5. **Data split**: Train/val/test split'i kaydet (hasta ID bazında)
 6. **Model checkpoint**: Best model, training logs
 7. **Preprocessing**: Tüm adımları dokümante et
-:::
 
-## Version Control Stratejisi
+Version Control Stratejisi
 
 ```
 project/
@@ -87,21 +111,31 @@ project/
     └── git repository
 ```
 
-## Hekim-Mühendis İşbirliği
+Başarısız Deneyleri de Dokümante Edin!
 
-::: {.fragment}
+
+- **Neden Önemli?**
+  - Aynı hataların tekrarlanmasını önler.
+  - Hangi yaklaşımların *neden* işe yaramadığını gösterir.
+  - Gelecekteki projeler için değerli bir bilgi birikimi sağlar.
+- **Ne Dokümante Edilmeli?**
+  - **Hipotez:** "ResNet50 yerine ViT kullanmak performansı artırır."
+  - **Sonuç:** "ViT, %5 daha düşük AUC ile sonuçlandı ve 2 kat daha fazla eğitim süresi gerektirdi."
+  - **Olası Neden:** "Veri setimiz (N=1000) ViT'nin etkili öğrenmesi için çok küçüktü."
+- **"Lab Defteri" Yaklaşımı:** Her deneyin (başarılı veya başarısız) kaydedildiği bir günlük tutmak, projenin şeffaflığını ve tekrarlanabilirliğini artırır.
+
+Hekim-Mühendis İşbirliği
+
+
 **Hekim beklentisi**: "Hangi vakalarda başarılı, hangi vakalarda başarısız?"
 
 **Mühendis yapması gereken**: Error analysis ve stratified performance reporting
-:::
 
-::: {.fragment}
 **Mühendis beklentisi**: "Ground truth label'ları tutarlı mı?"
 
 **Hekim yapması gereken**: Inter-observer agreement çalışması (Kappa skoru)
-:::
 
-## Araçlar
+Araçlar
 
 - **Model Cards**: [model-cards.github.io](https://modelcards.withgoogle.com/about)
 - **Datasheets for Datasets**: Template ve örnekler
@@ -109,7 +143,7 @@ project/
 - **DVC**: Data version control
 - **Weights & Biases**: Model tracking ve visualization
 
-::: {.notes}
+
 Dokümantasyon, sadece akademik bir gereklilik değil, klinik uygulamada hasta güvenliği ve regülatör onay için kritik öneme sahiptir.
 
 **Tartışma soruları:**
@@ -117,4 +151,12 @@ Dokümantasyon, sadece akademik bir gereklilik değil, klinik uygulamada hasta g
 - Veri seti versiyonlaması nasıl yapılmalı? (Hasta eklenince, label değişince)
 - Reproducibility için minimum gereklilikler neler?
 - Patoloji uzmanı konsensus süreci nasıl dokümante edilmeli?
+
+
+Kolaylaştırıcı notları (dokümantasyon):
+- Model Card alanları için sorumlular ve teslim tarihi; boş alan bırakma politikası yok.
+- DVC/MLflow yapılandırması: deney adı, veri versiyonu, commit hash, parametre ve metrik kaydı.
+- Reprod paket içeriği: container/env, seed, veri soy ağacı, eğitim/validasyon scriptleri.
+- Changelog ve sürüm notları: değişiklik etkisi (risk/performans), geri dönüş planı.
+- Dataset datasheet doldurma: motivasyon, kompozisyon, etik; yayınlanabilir/kurum‑içi sürümler.
 :::

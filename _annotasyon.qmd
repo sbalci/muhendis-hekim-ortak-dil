@@ -1,4 +1,4 @@
-# Annotasyon, İşaretleme, Etiketleme
+## Annotasyon, İşaretleme, Etiketleme
 
 - SNOMED-CT kodları ile prospektif etiketleme
 
@@ -7,7 +7,7 @@
 <https://github.com/sbalci/sectra-qupath>
 
 
-::: {.notes}
+::: notes
 
 Annotation kalitesi ve stratejisi, modelin başarısını doğrudan belirler. Yetersiz veya hatalı annotation, en iyi algoritmayı bile başarısız kılar.
 
@@ -59,4 +59,11 @@ Annotation kalitesi ve stratejisi, modelin başarısını doğrudan belirler. Ye
 - Stratified sampling: Tüm vakaları değil, representatif olanları
 - Iterative annotation: İlk model → hata analizi → ek annotation
 
+
+Kolaylaştırıcı notları (annotasyon):
+- Etiket taksonomisi ve tanım kitabı: sınıf örnekleriyle; belirsiz alan örneklerini özellikle belirtin.
+- Protokol: vaka başına hedef süre ve hedef alan; kim etiketler (uzman/teknisyen) ve QC oranı.
+- Kalite: %5 çift etiketleme, hedef kappa; uyuşmazlık çözümü ve konsensus süreci.
+- Active learning döngüsü: seçim stratejisi (uncertainty/diversity), durdurma kriterleri.
+- Format: GeoJSON + sınıf haritası; PACS→QuPath dönüşümünde alan/koordinat kontrolleri.
 :::

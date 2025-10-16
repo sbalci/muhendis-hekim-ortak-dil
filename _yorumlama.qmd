@@ -12,10 +12,82 @@ histai SPIDER colorectal model deneme1 https://www.youtube.com/watch?v=2A-7oQeO9
 
 Confusion matrix vs Görsel
 
+::: notes
 
-::: {.notes}
+
+Model Neyi Öğreniyor? Surrogate Marker Riski
+
+Modelin, bizim istediğimiz biyolojik belirteci değil, onunla sıkça bir arada bulunan başka bir özelliği ("surrogate marker") öğrenme riski vardır.
+
+
+**Hedef Belirteç: HPV**
+
+- **Amaç:** Model, HPV virüsünün neden olduğu hücresel değişiklikleri (koilositoz) tespit etmeli.
+- **Gerçekte Öğrendiği:** Model, HPV ile sıkça birlikte görülen yoğun lenfositik infiltrasyonu (inflamasyon) öğreniyor.
+
+**Sonuç ve Risk**
+
+- **Görünürde Başarı:** HPV pozitif vakaların çoğunda inflamasyon olduğu için model yüksek doğruluk gösterir.
+- **Gizli Hata:** İnflamasyonun olduğu ama HPV'nin olmadığı (örn: başka bir enfeksiyon) bir vakada model **yanlış pozitif** sonuç verir.
+- **Çözüm:** Modelin nereye baktığını gösteren Grad-CAM gibi açıklanabilirlik (XAI) teknikleri ile modelin gerçekten koilositlere mi yoksa inflamasyona mı odaklandığı kontrol edilmelidir.
+
+Metriklerin Ötesi: Hata Analizi
+
+Bir confusion matrix, modelin ne tür hatalar yaptığını özetler, ancak *neden* yaptığını göstermez.
+
+
+**Confusion Matrix**
+
+| | Tahmin: Benign | Tahmin: Malign |
+| :--- | :---: | :---: |
+| **Gerçek: Benign** | **TN: 90** | **FP: 5** |
+| **Gerçek: Malign** | **FN: 10** | **TP: 85** |
+
+- **False Positives (FP):** 5 benign vaka, malign sanıldı.
+- **False Negatives (FN):** 10 malign vaka, benign sanıldı.
+
+**Görsel Hata Analizi**
+
+**False Positive Örneği (Benign -> Malign)**
+![FP Örneği](https://via.placeholder.com/200x150/FFF0F5/000000?text=Reaktif+Atipi)
+*Model, yoğun inflamasyon ve reaktif atipiyi malignite ile karıştırdı.*
+
+**False Negative Örneği (Malign -> Benign)**
+![FN Örneği](https://via.placeholder.com/200x150/F0FFF0/000000?text=İyi+Diferansiye+Tümör)
+*Model, normal dokuya çok benzeyen iyi diferansiye bir tümörü atladı.*
+
+Modelin Gözünden: Açıklanabilirlik (XAI)
+
+Grad-CAM gibi Saliency Map teknikleri, modelin karar verirken görüntünün hangi bölgelerine "baktığını" veya odaklandığını gösteren ısı haritaları üretir.
+
+
+
+**Orijinal Görüntü ve Tahmin**
+
+![Orijinal Görüntü](https://via.placeholder.com/300x225/FFFFFF/000000?text=Orijinal+Görüntü)
+
+**Model Tahmini:** Adenokarsinom (%98)
+
+**Grad-CAM Isı Haritası**
+
+![Grad-CAM](https://via.placeholder.com/300x225/FF0000/FFFFFF?text=Grad-CAM+Overlay)
+
+*Isı haritası, modelin kararını verirken spesifik olarak tümör hücrelerinin bulunduğu alanlara odaklandığını gösteriyor. Bu, modelin doğru belirteçleri öğrendiğine dair güveni artırır.*
+
+
+
+
 Sonuçların yorumlanmasında patologlara görsel bir arayüz sunulması önemlidir.
 Özgüllük, seçicilik, eğri altında kalan alan, F1 skoru gibi değerler modelin başarısını gösterse de sonuçların görüntüler üzerinde gösterilmesi karşılıklı anlaşma için önem taşımaktadır. 
 
 
+
+
+
+Kolaylaştırıcı notları (yorumlama):
+- Kalibrasyon: kalibrasyon eğrisi ve Brier skoru; kalibrasyon sonrası eşik seçimi.
+- Eşik ve klinik fayda: Decision Curve Analysis ile net faydaya göre eşik belirleme.
+- Hata analizi: karışıklık bölgeleri ısı haritası; tipik yanlış pozitif/negatif vaka listesi.
+- OOD/abstain: dağılım‑dışı tespiti ve “no‑call/ikinci okuma” politikası.
+- Klinik raporlama: model kapsamı ve sorumluluk beyanı; sınırlar ve uyarılar.
 :::

@@ -1,20 +1,23 @@
-# Arayüz ve Kullanıcı Deneyimi
+## Arayüz 
 
-## Patoloğun İhtiyaçları
 
-::: incremental
+
+::: notes
+
+Patoloğun İhtiyaçları
+
 - **Hızlı görselleştirme**: Saniyeler içinde yükleme
 - **Kolay navigasyon**: Pan, zoom, rotate
 - **Annotation araçları**: Çizim, işaretleme, etiketleme
 - **Model sonuçları**: Heatmap, segmentasyon, sınıflandırma
 - **Karşılaştırma**: Orijinal vs model sonucu
 - **Raporlama**: Sonuçları rapor export
-:::
 
-## Viewer Tipleri
 
-::: panel-tabset
-### Web-based Viewers
+Viewer Tipleri
+
+
+Web-based Viewers
 
 **Avantajlar**:
 - Platform bağımsız
@@ -27,7 +30,7 @@
 - OMERO.web
 - Digital Slide Archive (DSA)
 
-### Desktop Viewers
+Desktop Viewers
 
 **Avantajlar**:
 - Daha hızlı
@@ -39,13 +42,11 @@
 - QuPath
 - ImageScope
 - ASAP
-:::
 
-## Annotation Interface Tasarımı
+Annotation Interface Tasarımı
 
-::::: columns
-::: {.column width="50%"}
-### Temel Özellikler
+
+Temel Özellikler
 
 - Freehand drawing
 - Polygon/rectangle
@@ -54,10 +55,8 @@
 - Eraser
 - Undo/redo
 - Zoom to annotation
-:::
 
-::: {.column width="50%"}
-### İleri Özellikler
+İleri Özellikler
 
 - Multi-class labeling
 - Hierarchical categories
@@ -65,10 +64,8 @@
 - AI-assisted annotation
 - Measurement tools
 - Shortcuts (keyboard)
-:::
-:::::
 
-## AI Model Entegrasyonu
+AI Model Entegrasyonu
 
 ```
 User Interface
@@ -84,46 +81,92 @@ User Review & Edit
 Final Report
 ```
 
-## Görselleştirme Tipleri
+Görselleştirme Tipleri
 
-::: panel-tabset
-### Heatmap
+
+Heatmap
 
 - Probability overlay
 - Renk skalası (0-1)
 - Threshold ayarlama
 - Opacity control
 
-### Segmentation Overlay
+
+Segmentation Overlay
 
 - Farklı renkler için farklı sınıflar
 - Contour çizimi
 - Fill vs outline
 - Object count
 
-### Classification Results
+
+Classification Results
 
 - Tile-level predictions
 - Confidence scores
 - Confusion regions
 - Borderline cases
-:::
 
-## Hekim Feedback Mekanizması
+Hekim Feedback Mekanizması
 
-::: incremental
+
 1. **Model sonucu göster**
 2. **Hekim değerlendir**: Doğru/Yanlış
 3. **Düzeltme yap**: Annotation edit
 4. **Feedback kaydet**: Database'e yaz
 5. **Model güncelleme**: Active learning
-:::
 
-::: {.fragment}
+
 **İteratif geliştirme**: Hekim feedback → Model iyileştirme → Tekrar değerlendirme
-:::
 
-## Performance ve Usability
+Hekim Geri Bildirim Arayüzü (Mock-up)
+
+
+
+
+
+*Görüntü üzerinde modelin bulduğu alanlar (örn: heatmap) gösterilir.*
+
+
+**Model Sonucu Değerlendirme**
+
+**Vaka ID:** 12345
+
+**Model Tahmini:** Tümör Tespiti
+
+**Güven Skoru:** %92
+
+
+
+**Bu sonuç doğru mu?**
+
+[✔️ Doğru] [❌ Yanlış]
+
+
+
+**Düzeltme/Yorum:**
+
+(Metin kutusu: Patolog, yanlış pozitif/negatif alanları veya yorumlarını buraya yazabilir)
+
+[Gönder]
+
+
+**Örnek Yorumlar:**
+- "Belirtilen alan tümör değil, yoğun inflamasyon."
+- "Model bir tümör odağını atlamış (koordinat: x,y)."
+- "Sonuç doğru, ancak derecelendirme hatalı."
+
+Uyarı Yorgunluğu (Alert Fatigue) ve Çözümleri
+
+
+incremental
+- **Problem:** Model çok fazla yanlış pozitif sonuç ürettiğinde, patologlar zamanla bu uyarılara karşı duyarsızlaşabilir ve gerçek pozitifleri de gözden kaçırabilir.
+- **Çözüm 1: Güven Eşiğini (Confidence Threshold) Ayarlama:** Sadece yüksek güven skoruna sahip sonuçları göster. Düşük güvenli sonuçları "isteğe bağlı" olarak sun.
+- **Çözüm 2: Akıllı Gruplama:** Benzer yanlış pozitifleri gruplayarak tek bir uyarı olarak sun.
+- **Çözüm 3: Kullanıcı Odaklı Tasarım:** Arayüzde uyarıların ne kadar rahatsız edici olduğunu patoloğun ayarlamasına izin ver (örn: sesli uyarı, yanıp sönen çerçeve vb.).
+- **Amaç:** Patoloğun dikkatini sadece en önemli ve en olası bulgulara çekmek.
+
+Performance ve Usability
 
 | Özellik | Gereksinim | Çözüm |
 |---------|------------|-------|
@@ -133,9 +176,11 @@ Final Report
 | Model inference | <1 dk/slide | GPU server, batch processing |
 | Export | Multiple formats | PDF, CSV, JSON, GeoJSON |
 
-## Örnek Arayüzler
 
-### QuPath
+Örnek Arayüzler
+
+
+QuPath
 
 - Open-source
 - Desktop application
@@ -143,82 +188,75 @@ Final Report
 - Machine learning integration
 - **Demo**: [QuPath.github.io](https://qupath.github.io/)
 
-### histai SPIDER
+
+histai SPIDER
 
 - Web-based
 - Ready-to-use models
 - Visual interface
 - **Demo video**: [YouTube](https://www.youtube.com/watch?v=8tLORQ7yUIQ)
 
-### caMicroscope
+
+caMicroscope
 
 - Web-based viewer
 - Annotation tools
 - DICOM WSI support
 - **Demo**: [camicroscope.org](https://camicroscope.org/)
 
-## Hekim-Mühendis UI/UX Tartışması
 
-::: {.fragment}
+Hekim-Mühendis UI/UX Tartışması
+
+
 **Hekim**: "Çok karmaşık, ben sadece sonucu görmek istiyorum"
 
 **Mühendis**: "Ama parametreleri ayarlamak isteyebilirsin"
 
 **Çözüm**: **Simple by default, advanced on demand**
-:::
 
-::: {.fragment}
+
 **Mühendis**: "Web arayüzü daha pratik"
 
 **Hekim**: "Ama hastane bilgisayarında browser restriction var"
 
 **Çözüm**: **Hybrid çözüm** (Web + Desktop seçeneği)
-:::
 
-## Accessibility ve Usability İlkeleri
+Accessibility ve Usability İlkeleri
 
-::: incremental
+
 - **Minimal öğrenme eğrisi**: Sezgisel tasarım
 - **Hızlı iş akışı**: Keyboard shortcuts
 - **Hata toleransı**: Undo/redo, autosave
 - **Clear feedback**: Progress bar, notifications
 - **Consistency**: Standart UI patterns
 - **Documentation**: Tutorial, help menu
-:::
 
-## Deployment Stratejileri
+Deployment Stratejileri
 
-::::: columns
-::: {.column width="50%"}
-### On-premise
+
+On-premise
 
 - Kurum içi server
 - Veri güvenliği
 - Performans kontrolü
 - Yüksek maliyet (hardware)
-:::
 
-::: {.column width="50%"}
-### Cloud-based
+Cloud-based
 
 - Scalable
 - Düşük başlangıç maliyeti
 - Remote access
 - Veri transfer challenge
-:::
-:::::
 
-## Gelecek Trendler
+Gelecek Trendler
 
-::: incremental
+
 - **AR/VR**: Immersive pathology
 - **Voice control**: Hands-free annotation
 - **Mobile app**: Tablet support
 - **Real-time collaboration**: Multi-user sync
 - **AI-assistant**: Chatbot for queries
-:::
 
-::: {.notes}
 Arayüz tasarımı, modelin klinik adaptasyonundaki en kritik faktörlerden biridir. En iyi model bile kötü bir arayüzle kullanılamaz hale gelebilir.
 
 **Tartışma soruları:**
@@ -227,4 +265,12 @@ Arayüz tasarımı, modelin klinik adaptasyonundaki en kritik faktörlerden biri
 - Feedback mekanizması nasıl tasarlanmalı ki patologlar gerçekten kullansın?
 - Web vs Desktop: Hangi durumda hangisi daha uygun?
 - Mobil cihazlarda WSI görüntüleme pratik mi?
+
+
+Kolaylaştırıcı notları (arayüz/UX):
+- Görev seti: 5 temel görev (aç, zoom, işaretle, karşılaştır, export) için başarı ve süre ölçün.
+- Performans bütçeleri: açılış <5 sn, pan/zoom 60 FPS; bütçe aşımı için uyarılar.
+- Belirsizlik/abstain gösterimi: güven skoru, “no‑call” rozetleri ve ikinci okuma akışı.
+- Feedback kaydı: Doğru/yanlış işaretleri, serbest metin yorum; veri şeması ve anonimleştirme.
+- “Varsayılan basit, isteğe bağlı ileri” modları: kullanıcı profiline göre ayar setleri.
 :::
