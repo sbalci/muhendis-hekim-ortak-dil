@@ -43,7 +43,7 @@ quarto render index.qmd
 
 ### Content Organization
 
-The presentation is modular, with each section in a separate file prefixed with underscore:
+The presentation is modular, with each section in a separate file prefixed with underscore. All sections are included in `index.qmd` via `{{< include _section.qmd >}}` directives in a specific order:
 
 - `_is_akisi.qmd`: Pathology workflow and software needs
 - `_amac_etik.qmd`: Purpose and ethics
@@ -51,11 +51,15 @@ The presentation is modular, with each section in a separate file prefixed with 
 - `_kohort_metin.qmd`: Cohort text data
 - `_kohort_klinik.qmd`: Cohort clinical data
 - `_kohort_goruntu.qmd`: Cohort image data
+- `_goruntu_kalitesi.qmd`: Image quality considerations
 - `_anonimlestirme.qmd`: Anonymization
 - `_annotasyon.qmd`: Annotation/labeling (references external GitHub project)
 - `_arayuz.qmd`: Interface/UI
 - `_yorumlama.qmd`: Interpretation
+- `_dokumantasyon.qmd`: Documentation
 - `_tesekkur.qmd`: Acknowledgments
+
+**File naming convention**: Content files start with underscore (`_`) to indicate they are partials/includes, not standalone documents.
 
 ### Diagrams
 
@@ -86,12 +90,30 @@ All content is in Turkish. The presentation focuses on pathology workflow, medic
 ## Reveal.js Configuration
 
 The presentation uses several reveal.js features:
-- Scrollable slides
-- Custom theme
+- Scrollable slides (`.scrollable` class on slide headers)
+- Custom theme (`slides.scss`)
 - Speaker notes (`::: notes`)
 - Fullscreen plugin for embedded iframes
-- Chalkboard (disabled buttons)
-- Custom slide menu behavior (hidden on title slide)
+- Chalkboard (disabled buttons: `chalkboard: buttons: false`)
+- Custom slide menu behavior (hidden on title slide via custom JavaScript)
 - Background images/videos on title slide
-- Fragment animations
+- Fragment animations (`::: {.fragment}` or `::: {.fragment .fade-in}`)
+  - Use fragments to make content appear incrementally
+  - Common animation classes: `.fade-in`, `.fade-up`, `.grow`, `.shrink`
 - Panel tabsets for organizing content
+- Column layouts (`::: columns` with `::: {.column width="X%"}`)
+
+## R Code Execution
+
+Some `.qmd` files contain R code chunks that generate QR codes dynamically:
+- QR codes are generated using the `qrcode` package
+- Generated SVG files are saved to `qrcodes/` directory
+- Code chunks use `eval=TRUE, echo=FALSE, include=FALSE` to run silently
+- Check for file existence before generating to avoid regeneration
+
+## Caching and Output
+
+- Quarto caching is enabled (`cache: true` in index.qmd)
+- Cache directory: `index_cache/` (not committed to git)
+- Output directory: `docs/` (committed for GitHub Pages hosting)
+- `.quartoignore` specifies files to exclude from rendering (currently: `CLAUDE.md`)
