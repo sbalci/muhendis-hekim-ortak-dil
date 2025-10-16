@@ -1,82 +1,84 @@
-# Görüntü Kalitesi ve Ön İşleme
+## Görüntü Kalitesi - Preparat
 
-## Kalite Kontrol Kriterleri
-
-::: incremental
-- Odak kalitesi (focus quality)
-- Doku miktarı ve yeterlilik
-- Artifact tespiti
-  - Kıvrımlar (tissue folds)
-  - Bulanıklık (blur)
+- Artefakt
+  - Kıvrımlar 
+  - Bulanıklık 
   - Kalem işaretleri
   - Hava kabarcıkları
-  - Yanık alanlar
-:::
 
-## Renk Standardizasyonu
+## Görüntü Kalitesi - Tarama
 
-::: panel-tabset
-### Problem
+- Tarama kalitesi
+  - Kamera, Işık
+  - Odak 
+- Tarama zamanı (hemen vs arşiv)
+
+
+## Görüntü Kalitesi Tespiti
+
+- Patolog
+- Yapay zeka
+  - GrandQC
+
+## İdeal şartlarda bile olan Sorunlar
 
 - Aynı boya, farklı laboratuvarlarda farklı sonuçlar
 - Aynı laboratuvarda, farklı günlerde farklı sonuçlar
+- Renk kalitesi makale
 - Tarayıcı kalibrasyonu
 - Işık kaynağı değişkenliği
 
-### Çözümler
+
+::: notes
+
+Çözümler
 
 - Color normalization (Macenko, Reinhard, Vahadane)
 - Stain separation (H&E → Hematoxylin + Eosin)
 - StainGAN ve deep learning yaklaşımları
 - Reference slide kullanımı
-:::
 
-## Preprocessing Adımları
 
-::: incremental
+
+
+Preprocessing Adımları
+
+
 1. **Thumbnail inceleme**: Hızlı kalite kontrolü
 2. **Doku segmentasyonu**: Background vs tissue
 3. **Tile extraction**: Patch boyutu seçimi (256x256, 512x512, 1024x1024)
 4. **Quality filtering**: Bulanık veya artifact içeren tile'ların elenmesi
 5. **Color normalization**: Standardizasyon
 6. **Data augmentation**: Rotation, flip, color jitter
-:::
 
-## Mühendis-Hekim Tartışma Noktaları
+Mühendis-Hekim Tartışma Noktaları
 
-::: {.fragment}
 **Hekim sorusu**: "Neden modelim laboratuvar değişince çalışmıyor?"
 
 **Mühendis cevabı**: "Color normalization ve domain adaptation gerekiyor"
-:::
 
-::: {.fragment}
 **Mühendis sorusu**: "Hangi artifacts önemli, hangisi göz ardı edilebilir?"
 
 **Hekim cevabı**: "Küçük kıvrım ok, ama yanık alan ve kalın kesitte hücre morfolojisi değişir"
-:::
 
-## Araçlar ve Kaynaklar
+Araçlar ve Kaynaklar
 
 - **HistoQC**: Otomatik kalite kontrol
 - **QuPath**: Manual quality assessment
 - **StainTools**: Python color normalization library
 - **TorchStain**: PyTorch-based stain normalization
 
-::: {.notes}
 Görüntü kalitesi, model performansını doğrudan etkiler. Patoloji laboratuvarlarının standardizasyon çalışmaları, makine öğrenmesi modellerinin genelleştirilebilirliği için kritik öneme sahiptir.
 
 **Tartışma soruları:**
 - Kalite kontrolü otomatik mi manuel mi yapılmalı?
 - Threshold değerleri nasıl belirlenmeli?
 - Düşük kaliteli görüntüler veri setinden çıkarılmalı mı yoksa augmentation ile kullanılmalı mı?
-:::
 
 
-## Boya Varyasyonu Problemi
+Boya Varyasyonu Problemi
 
-::: panel-tabset
-### Laboratuvarlar Arası
+Laboratuvarlar Arası
 
 - Farklı boyama protokolleri
 - Farklı kimyasal tedarikçileri
@@ -84,18 +86,18 @@ Görüntü kalitesi, model performansını doğrudan etkiler. Patoloji laboratuv
 - Farklı inkubasyon süreleri
 - Tarayıcı farklılıkları
 
-### Aynı Laboratuvar İçinde
+Aynı Laboratuvar İçinde
 
 - Boya yaşlanması
 - Otostainer kalibrasyonu
 - Reagent lot değişimi
 - Kesit kalınlığı değişimi
 - Fikzasyon süresi farklılıkları
-:::
 
-
-
-::: {.notes}
-
+Kolaylaştırıcı notları (görüntü kalitesi):
+- Kabul kriterleri: odak skoru > X, doku yüzdesi > Y%; blur/fold/ink eşiği ve raporlama.
+- QC pipeline: HistoQC/QuPath ile otomatik rapor + %N manuel örnekleme; sonuçların sürümlemesi.
+- Renk varyasyonu azaltma: referans lam, kontrol serisi ve tarayıcı kalibrasyonu; normalizasyonun nerede uygulandığı (train/inference).
+- Artefakt politikası: tamamen dışlama vs modelle birlikte tolerans/robustluk; klinik kabul kriterleriyle hizalama.
 :::
 
