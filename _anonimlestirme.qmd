@@ -4,8 +4,35 @@
 - Psödo-anonimleştirme
 - Anonimleştirmenin veriyi bozması
 
+- Anonimleştirme reidentification ne akdar mümkün makalesi
+- DICOM'a geçelim mi tartışması
 
-## Anonimlestirme
+
+## Anonimleştirme
+
+::::: columns
+
+::: {.column width="50%"}
+
+### svs
+
+![](/media/svs-metadata.png)
+
+:::
+
+::: {.column width="50%"}
+
+### dicom
+
+![](/media/dicom-metadata.png)
+
+
+:::
+
+:::::
+
+
+## Anonimleştirme
 
 
 ::::: columns
@@ -14,11 +41,24 @@
 
 ### PACS'tan aktarırken anonimleştirme
 
+![](/media/PACS-anonimlestirme.png)
+
 :::
 
 ::: {.column width="50%"}
 
 ### Aktarım sonrası anonimleştirme
+
+<https://github.com/eDIMESLab/MedicalImageAnonymizer>  
+
+<https://github.com/pearcetm/svs-deidentifier>  
+
+<https://github.com/cornish/anonymize-slide-python3>
+
+<https://gitlab.com/empaia/integration/wsi-anon>
+
+pma.start 
+
 
 :::
 
