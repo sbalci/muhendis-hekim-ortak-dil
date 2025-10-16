@@ -1,18 +1,6 @@
 # Teşekkürler
 
 
-```{r, eval=TRUE, echo=FALSE, include=FALSE, error=TRUE}
-if (!file.exists("./qrcodes/patolojiatlasi.svg")) {
-
-  qrcode_svg <- qrcode::qr_code("https://www.patolojiatlasi.com/")
-
-  qrcode::generate_svg(qrcode = qrcode_svg,
-                       filename = "./qrcodes/patolojiatlasi.svg",
-                       show = FALSE)
-}
-```
-
-Sonuçta her zorluk bir kolaylıkla beraber geliyor. <br> En iyisi bir işi bitirince hemen diğerine başlamak.
 
 ```{r}
 #| echo: false
@@ -24,6 +12,7 @@ fa_fill <- "#606060"
 
 ::::: {.columns .v-center-container}
 ::: {.column width="60%"}
+
 `r fontawesome::fa("link", fill = fa_fill)` [serdarbalci.com](https://www.serdarbalci.com/)
 
 `r fontawesome::fa("twitter", fill = fa_fill)` [\@serdarbalci](https://twitter.com/serdarbalci)
@@ -34,63 +23,11 @@ fa_fill <- "#606060"
 :::
 
 ::: {.column width="40%"}
-![](./media/Doc_Dr_Serdar_Balci_patoloji_uzmani.png)
+![](./media/memorial-logo.gif)
+
 :::
+
 :::::
 
-## Patoloji Atlası
 
-::::: columns
-::: {.column width="60%"}
-`r fontawesome::fa("link", fill = fa_fill)` [Patoloji Atlası](https://www.patolojiatlasi.com/)
-:::
 
-::: {.column width="40%"}
-`r fontawesome::fa("link", fill = fa_fill)` [Histopathology Atlas](https://www.histopathologyatlas.com/)
-:::
-:::::
-
-:::::: columns
-::: {.column width="40%"}
-![](./media/patolojiatlasi.png)
-:::
-
-::: {.column width="20%"}
-:::
-
-::: {.column width="40%"}
-![](./media/histopathologyatlas.png)
-:::
-::::::
-
-::: footer
-[patolojiatlasi.com](https://www.patolojiatlasi.com/) [histopathologyatlas.com](https://www.histopathologyatlas.com/)
-:::
-
-## 
-
-::::: columns
-::: {.column width="60%"}
-
-:::
-
-::: {.column width="40%"}
-`patolojiatlasi.com`
-:::
-:::::
-
-:::::: columns
-::: {.column width="33%"}
-
-:::
-
-::: {.column width="33%"}
-
-:::
-
-::: {.column width="33%"}
-![](./qrcodes/patolojiatlasi.svg){width="70%"}
-:::
-::::::
-
-![](./media/memorial-logo.gif){.absolute left="35%" width="20%"}

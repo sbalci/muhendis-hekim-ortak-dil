@@ -5,23 +5,31 @@
 - Arşivden eski vakalar
     - Solma, çizilme, tozlanma
 
+::: {.fragment .fade-in}
 ### Dosya boyutu
 
 - 1-5 GB
-- Saklamak zor
+- Saklamak / aktarmak zor
 - Online kullanımı zor
+:::
 
+::: {.fragment .fade-in}
 ### Dosya türü
 
 - svs
 - dicom
 - tiff
+:::
 
+::: {.fragment .fade-in}
 ### Tarama Çözünürlüğü ve Boyutlar
 
 - 10x, 20x, 40x  
 - Triyaj, Tanı, Sağkalım
 
+:::
+
+::: {.fragment .fade-in}
 ### Doku tipi
 
 - Z-stack
@@ -29,9 +37,10 @@
 - Frozen
 - Özel boyalar
 
+:::
 
 
-::: {.notes}
+::: notes
 Görüntü verisi yönetimi, computational pathology'nin en zor yönlerinden biridir. Dosya boyutları, format çeşitliliği ve preprocessing gereksinimleri dikkatli planlama gerektirir.
 
 **Tartışma soruları:**
@@ -61,4 +70,12 @@ Görüntü verisi yönetimi, computational pathology'nin en zor yönlerinden bir
 **Hekim-Mühendis Köprüsü:**
 - Hekim: "Bu solmuş lam kabul edilir mi?" → Mühendis: "Augmentation vs filtreleme"
 - Mühendis: "Tüm slide'ı process etmek 10 saat sürüyor" → Hekim: "Diagnostik alanları işaretleyeyim"
+
+
+Kolaylaştırıcı notları (görüntü verisi):
+- Veri bütçesi hedefi: hasta sayısı, slide/sınıf dengesi; dış veri (TCGA vb.) kullanım kararı.
+- Tiling parametreleri: boyut, stride, foreground eşiği; MIL (slide‑level) vs seg (pixel‑level) stratejisi.
+- Magnification planı: 10x/20x/40x görev‑bazlı; multi‑magnification piramit gereksinimi.
+- Eski arşiv: solma/çizilme etkisi ve filtreleme vs augmentation kararı.
+- Format standardı ve DICOM WSI geçiş planı; metadata eşleme.
 :::
