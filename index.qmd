@@ -5,7 +5,7 @@ author:
    - name: "Serdar Balcı"
      affiliation: "Memorial Patoloji"
 date: last-modified # 2025-10-18
-footer: "[Mühendisler ve Hekimler Ortak Bir Dili Nasıl Kurar? Patologdan Mühendislere](https://www.serdarbalci.com/)"
+footer: "[Mühendisler ve Hekimler Ortak Bir Dili Nasıl Kurar? Patologdan Mühendislere](https://www.serdarbalci.com/muhendis-hekim-ortak-dil/)"
 logo: "./media/Doc_Dr_Serdar_Balci_patoloji_uzmani.png"
 include-after-body: logo-hyperlink.html
 editor: source
