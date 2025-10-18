@@ -1,10 +1,78 @@
 ## Annotasyon, İşaretleme, Etiketleme
 
-- SNOMED-CT kodları ile prospektif etiketleme
+**Annotation Granülaritesi:**  
+- Ne kadar detaylı etiketleme gerekiyor?  
+  - Görüntü bazlı  
+  - Lezyon seviyesi  
+  - Hücre seviyesi  
+- Pixel-level, bounding box, point annotation  
+- Hangi görev için hangi seviye yeterli?  
+- Anotasyon destekleyen AI araçları (Segment Anything)  
 
-[Using Sectra PACS Annotations in QuPath: A Comprehensive Guide](https://github.com/sbalci/sectra-qupath)
+## Annotasyon, İşaretleme, Etiketleme
 
-<https://github.com/sbalci/sectra-qupath>
+![](/media/modernpathology-annotation.jpg){width="70%"}
+
+
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 36788085](https://pubmed.ncbi.nlm.nih.gov/36788085/) *Annotating for Artificial Intelligence Applications in Digital Pathology: A Practical Guide for Pathologists and Researchers*
+
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 39615882](https://pubmed.ncbi.nlm.nih.gov/39615882/) *Annotation Practices in Computational Pathology: A European Society of Digital and Integrative Pathology (ESDIP) Survey Study*
+
+
+
+## Annotasyon, İşaretleme, Etiketleme
+
+:::: columns
+
+::: {.column width="50%"}
+
+![](/media/aiforia-annotation.png)
+:::
+
+
+::: {.column width="50%"}
+
+![](/media/qupath-annotation.png)
+
+
+:::
+
+::::
+
+
+
+## Annotasyon, İşaretleme, Etiketleme
+
+
+```{r}
+#| echo: false
+#| cache: false
+
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+:::: columns
+
+::: {.column width="50%"}
+
+![](/media/modernpathology-prospective-annotation-snomed.jpg){height="70%"}
+
+:::
+
+::: {.column width="50%"}
+
+`r fontawesome::fa("github", fill = fa_fill)` [sbalci/sectra-qupath](https://github.com/sbalci/sectra-qupath) *Using Sectra PACS Annotations in QuPath: A Comprehensive Guide*
+
+:::
+
+
+:::: 
+
+
+
+
+
 
 
 ::::: {.notes} 

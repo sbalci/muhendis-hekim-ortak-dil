@@ -11,6 +11,9 @@
 
 - ESDIP Academy 2024 <https://www.esdipath.org/academy/>
 
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 39847582](https://pubmed.ncbi.nlm.nih.gov/39847582/) *The tumour histopathology "glossary" for AI developers*
+
+
 ::: {.notes} 
 
 :::

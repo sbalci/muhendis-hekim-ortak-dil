@@ -37,6 +37,10 @@
 - Işık kaynağı değişkenliği
 
 
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 40145070](https://pubmed.ncbi.nlm.nih.gov/40145070/) *An international study of stain variability in histopathology using qualitative and quantitative analysis*
+
+
+
 ::: {.notes} 
 
 Çözümler

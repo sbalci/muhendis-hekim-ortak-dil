@@ -1,16 +1,51 @@
 ## Değerlendirme ve Yorumlama
 
-Model bize ne kadar bilgi veriyor. 
-Model bize rutin pratiğimizde yol gösterici olabilir mi? 
+- Model bize ne kadar bilgi veriyor. 
+- Model bize rutin pratiğimizde yol gösterici olabilir mi? 
+- HPV ya da EBV varlığını tespit ettiğini idda eden model aslında sadece morfolojiyi mi tespit ediyor? 
+- ER pozitifliğini tespit eden model aslında sadece tümör diferansiyasyonunu mu tespit ediyor?
 
-HPV ya da EBV varlığını tespit ettiğini idda eden model "surrogate" belirteç mi tespit ediyor? 
+
+## Değerlendirme ve Yorumlama
 
 
-QuPath & histai SPIDER Colorectal Model https://www.youtube.com/watch?v=8tLORQ7yUIQ
+```{r, eval=TRUE, echo=FALSE, include=FALSE, error=TRUE}
+if (!file.exists("./qrcodes/qupath-spider.svg")) {
 
-histai SPIDER colorectal model deneme1 https://www.youtube.com/watch?v=2A-7oQeO9sQ 
+  qrcode_svg <- qrcode::qr_code("https://www.youtube.com/watch?v=8tLORQ7yUIQ")
 
-Confusion matrix vs Görsel
+  qrcode::generate_svg(qrcode = qrcode_svg,
+                       filename = "./qrcodes/qupath-spider.svg",
+                       show = FALSE)
+}
+```
+
+```{r}
+#| echo: false
+#| cache: false
+
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+::::: columns
+::: {.column width="80%"}
+
+![](/media/model-degerlendirme.png)
+
+:::
+
+::: {.column width="20%" .r-stretch}
+![QuPath & histAI SPIDER Colorectal Model](./qrcodes/qupath-spider.svg)
+
+`r fontawesome::fa("github", fill = fa_fill)` [sbalci/spider-qupath](https://github.com/sbalci/spider-qupath)
+
+
+:::
+
+:::::
+
+
 
 ::::: {.notes} 
 

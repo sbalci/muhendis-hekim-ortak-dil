@@ -88,12 +88,11 @@ SİTOLOJİ[Sitoloji] --> TESLIMATDP[Teslimat ya da Dijital Tarama]
 
 :::: {.column width="20%"}
 
-::: {.fragment .fade-in}
 ![](media/patoloji-laboratuvarini-anlama-kilavuzu-1.jpg)
 
 
 ![](qrcodes/patolojide-bilisim.svg)
-:::
+
 
 ::::
 

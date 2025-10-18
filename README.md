@@ -3,6 +3,10 @@
 
 - [Mühendisler ve Hekimler Ortak Bir Dili Nasıl Kurar? Patologdan Mühendislere](https://www.serdarbalci.com/muhendis-hekim-ortak-dil/)  
 
+
+![](./media/Memorial-18Ekim2025-MemeKanseriBilimselToplantisi-1.jpg)
+
+
 ![](./media/Memorial-18Ekim2025-MemeKanseriBilimselToplantisi.jpg)
 
 - [Meme Kanserinde Geleceği Bugünden Kodlamak\

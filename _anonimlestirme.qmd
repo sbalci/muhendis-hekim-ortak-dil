@@ -1,16 +1,31 @@
 ## Veri Güvenliği
 
+```{r}
+#| echo: false
+#| cache: false
+
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
 - Rutindeki en vakit alıcı basamak
 - Psödo-anonimleştirme
 - Anonimleştirmenin veriyi bozması
 
-- Anonimleştirme reidentification ne akdar mümkün makalesi
-- DICOM'a geçelim mi tartışması
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 39316996](https://pubmed.ncbi.nlm.nih.gov/39316996/) *Re-identification from histopathology images*
+
 
 
 ## Anonimleştirme
 
-::::: columns
+
+
+
+:::::: rows
+
+::::: row
+
+:::: columns
 
 ::: {.column width="50%"}
 
@@ -29,35 +44,64 @@
 
 :::
 
+::::
+
 :::::
+
+::::: row
+
+::: {.fragment .smaller}
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 40979690](https://pubmed.ncbi.nlm.nih.gov/40979690/) *Wearing a fur coat in the summertime: Should digital pathology redefine medical imaging?*
+
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 40933626](https://pubmed.ncbi.nlm.nih.gov/40933626/) *Raining on the WSI interoperability parade - incorrect assertions with respect to DICOM and fur coats in the summertime*
+:::
+
+
+:::::
+
+
+::::::
+
+
+::: {.notes} 
+:::
+
+
 
 
 ## Anonimleştirme
 
 
+
+
+
 ::::: columns
 
-::: {.column width="50%"}
+::: {.column width="39%"}
 
-### PACS'tan aktarırken anonimleştirme
+### PACS'tan aktarırken
 
 ![](/media/PACS-anonimlestirme.png)
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="2%"}
+:::
 
-### Aktarım sonrası anonimleştirme
 
-<https://github.com/eDIMESLab/MedicalImageAnonymizer>  
+::: {.column width="59%" .r-stretch}
 
-<https://github.com/pearcetm/svs-deidentifier>  
+### Aktarım sonrası
 
-<https://github.com/cornish/anonymize-slide-python3>
+`r fontawesome::fa("github", fill = fa_fill)` [eDIMESLab/MedicalImageAnonymizer](https://github.com/eDIMESLab/MedicalImageAnonymizer)
 
-<https://gitlab.com/empaia/integration/wsi-anon>
+`r fontawesome::fa("github", fill = fa_fill)` [pearcetm/svs-deidentifier](https://github.com/pearcetm/svs-deidentifier)
 
-pma.start 
+`r fontawesome::fa("github", fill = fa_fill)` [cornish/anonymize-slide-python3](https://github.com/cornish/anonymize-slide-python3)
+
+`r fontawesome::fa("gitlab", fill = fa_fill)` [empaia/integration/wsi-anon](https://gitlab.com/empaia/integration/wsi-anon)
+
+`r fontawesome::fa("computer", fill = fa_fill)` [pathomation pma.start](https://www.pathomation.com/pma-start/)
 
 
 :::

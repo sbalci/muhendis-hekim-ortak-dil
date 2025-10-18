@@ -1,6 +1,11 @@
 ## Dokümantasyon ve Tekrarlanabilirlik
 
+- Kodların (comment), modellerin, veri setlerinin detaylı dokümantasyonu
+- Ticari bir ürün olsa bile metodların ve psödokodların paylaşımı
+- Tercihen çalışan bir demo (Jupyter notebook, colab, docker)
 
+
+`r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 38532196](https://pubmed.ncbi.nlm.nih.gov/38532196/) *Digital counting of tissue cells for molecular analysis: the QuANTUM pipeline*
 
 
 

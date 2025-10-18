@@ -39,43 +39,59 @@
 :::::
 
 
+
+::: footer
+:::
+
+
+
+
 ## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
 
 
-:::::: columns
-
-::::: {.column width="48%"}
-
-:::: rows
-
-::: {.row}
-
-![](/media/rapor-ara-1.png){height="60%"}
-
-:::
-
-::: {.row}
 
 ![](/media/rapor-ara-2.png){height="60%"}
 
+
+
+![](/media/rapor-ara-1.png){height="60%"}
+
+
+::: footer
 :::
+
+
+
+## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
+
+```{r, eval=TRUE, echo=FALSE, include=FALSE, error=TRUE}
+if (!file.exists("./qrcodes/PathText.svg")) {
+
+  qrcode_svg <- qrcode::qr_code("https://www.youtube.com/watch?v=1bARBmZkdmA")
+
+  qrcode::generate_svg(qrcode = qrcode_svg,
+                       filename = "./qrcodes/PathText.svg",
+                       show = FALSE)
+}
+```
+
+**ECDP 2024**
+
+::::: columns
+
+:::: {.column width="80%"}
+
+![](/media/extracting-information-poster-v2.png){height="60%"}
+
+::::
+
+:::: {.column width="20%"}
+
+![](/qrcodes/PathText.svg){height="60%"}
 
 ::::
 
 :::::
-
-
-::::: {.column width="4%"}
-:::::
-
-
-::::: {.column width="48%"}
-
-![](/media/extracting-information-poster-v2.png){height="60%"}
-
-:::::
-
-::::::
 
 
 ::: footer

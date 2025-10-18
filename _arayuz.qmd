@@ -1,20 +1,20 @@
 ## Arayüz 
 
+- Araştırma için tasarlanmış arayüz
+  - Anotasyon
+  - Geri bildirim
+  - Model entegrasyonu
+
+- caMicroscope
+- OMERO.web
+- Digital Slide Archive (DSA)
+
+
+![](/media/digital-slide-archive.png)
 
 
 ::::: {.notes} 
 
-Patoloğun İhtiyaçları
-
-- **Hızlı görselleştirme**: Saniyeler içinde yükleme
-- **Kolay navigasyon**: Pan, zoom, rotate
-- **Annotation araçları**: Çizim, işaretleme, etiketleme
-- **Model sonuçları**: Heatmap, segmentasyon, sınıflandırma
-- **Karşılaştırma**: Orijinal vs model sonucu
-- **Raporlama**: Sonuçları rapor export
-
-
-Viewer Tipleri
 
 
 Web-based Viewers
