@@ -23,7 +23,9 @@
 - Patolog
 - Yapay zeka
   - GrandQC
-  Çalışmadan resimler
+
+![](./media/grandqc-calismasindan.jpg){width=600px}
+
 
 :::
 
