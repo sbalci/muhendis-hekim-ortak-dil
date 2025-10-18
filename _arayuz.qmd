@@ -10,7 +10,7 @@
 - Digital Slide Archive (DSA)
 
 
-![](/media/digital-slide-archive.png)
+![](./media/digital-slide-archive.png)
 
 
 ::::: {.notes} 

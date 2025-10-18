@@ -31,7 +31,7 @@ fa_fill <- "#606060"
 
 ### svs
 
-![](/media/svs-metadata.png)
+![](./media/svs-metadata.png)
 
 :::
 
@@ -39,7 +39,7 @@ fa_fill <- "#606060"
 
 ### dicom
 
-![](/media/dicom-metadata.png)
+![](./media/dicom-metadata.png)
 
 
 :::
@@ -81,7 +81,7 @@ fa_fill <- "#606060"
 
 ### PACS'tan aktarırken
 
-![](/media/PACS-anonimlestirme.png)
+![](./media/PACS-anonimlestirme.png)
 
 :::
 

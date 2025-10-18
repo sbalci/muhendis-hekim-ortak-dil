@@ -6,6 +6,9 @@
 - ER pozitifliğini tespit eden model aslında sadece tümör diferansiyasyonunu mu tespit ediyor?
 
 
+![](./media/mgurcan-patent.png)
+
+
 ## Değerlendirme ve Yorumlama
 
 
@@ -31,7 +34,7 @@ fa_fill <- "#606060"
 ::::: columns
 ::: {.column width="80%"}
 
-![](/media/model-degerlendirme.png)
+![](./media/model-degerlendirme.png)
 
 :::
 

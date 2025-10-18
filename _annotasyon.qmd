@@ -11,7 +11,7 @@
 
 ## Annotasyon, İşaretleme, Etiketleme
 
-![](/media/modernpathology-annotation.jpg){width="70%"}
+![](./media/modernpathology-annotation.jpg){width="70%"}
 
 
 `r fontawesome::fa("newspaper", fill = fa_fill)` [PMID: 36788085](https://pubmed.ncbi.nlm.nih.gov/36788085/) *Annotating for Artificial Intelligence Applications in Digital Pathology: A Practical Guide for Pathologists and Researchers*
@@ -26,13 +26,13 @@
 
 ::: {.column width="50%"}
 
-![](/media/aiforia-annotation.png)
+![](./media/aiforia-annotation.png)
 :::
 
 
 ::: {.column width="50%"}
 
-![](/media/qupath-annotation.png)
+![](./media/qupath-annotation.png)
 
 
 :::
@@ -56,7 +56,7 @@ fa_fill <- "#606060"
 
 ::: {.column width="50%"}
 
-![](/media/modernpathology-prospective-annotation-snomed.jpg){height="70%"}
+![](./media/modernpathology-prospective-annotation-snomed.jpg){height="70%"}
 
 :::
 

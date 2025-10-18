@@ -1,6 +1,6 @@
 ## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
 
-![](/media/rapor-ornek-3a.jpg){height="60%"}
+![](./media/rapor-ornek-3a.jpg){height="60%"}
 
 ## Metin Verisi: Yapılandırılmış, Serbest Metin {.scrollable}
 
@@ -8,13 +8,13 @@
 
 :::: {.row}
 
-![](/media/rapor-ornek-1a.jpg)
+![](./media/rapor-ornek-1a.jpg)
 
 ::::
 
 :::: {.row}
 
-![](/media/rapor-ornek-2a.jpg)
+![](./media/rapor-ornek-2a.jpg)
 
 ::::
 
@@ -26,13 +26,13 @@
 
 :::: {.row}
 
-![](/media/rapor-ornek-1b.jpg)
+![](./media/rapor-ornek-1b.jpg)
 
 ::::
 
 :::: {.row}
 
-![](/media/rapor-ornek-2b.jpg)
+![](./media/rapor-ornek-2b.jpg)
 
 ::::
 
@@ -50,11 +50,11 @@
 
 
 
-![](/media/rapor-ara-2.png){height="60%"}
+![](./media/rapor-ara-2.png){height="60%"}
 
 
 
-![](/media/rapor-ara-1.png){height="60%"}
+![](./media/rapor-ara-1.png){height="60%"}
 
 
 ::: footer
@@ -81,7 +81,7 @@ if (!file.exists("./qrcodes/PathText.svg")) {
 
 :::: {.column width="80%"}
 
-![](/media/extracting-information-poster-v2.png){height="60%"}
+![](./media/extracting-information-poster-v2.png){height="60%"}
 
 ::::
 
